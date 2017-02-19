@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorFondoLogin">#F7C5CB</color>
+    <color name="white100">#FFFFFF</color>
+    <color name="white20">#33FFFFFF</color>
+    <color name="white30">#d7ffffff</color>
+    <color name="white60">#99FFFFFF</color>
+    <color name="LightCoral">#EA8580</color>
+    <color name="Azalea">#ED6E60</color>
+    <color name="AzaleaOriginal">#F7C5CB</color>
+    <color name="HawkesBlue">#D5DDE6</color>
+</resources>
