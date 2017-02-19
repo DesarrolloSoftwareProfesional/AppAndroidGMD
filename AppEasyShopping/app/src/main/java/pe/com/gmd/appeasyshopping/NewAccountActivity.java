@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class NewAccountActivity extends AppCompatActivity {
 
     private EditText txtUser, txtPassword, txtFullName, txtEmail;
@@ -39,6 +42,8 @@ public class NewAccountActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(validateFormError())
                 {
+                    Toast.makeText(NewAccountActivity.this, "Ingreso de usuario exitoso",
+                            Toast.LENGTH_SHORT).show();
                    gotoLogin();
 
                 }else
@@ -60,6 +65,60 @@ public class NewAccountActivity extends AppCompatActivity {
 
     private boolean validateFormError() {
 
+        String user= txtUser.getText().toString().trim();
+        String password = txtPassword.getText().toString().trim();
+        String fullName = txtFullName.getText().toString().trim();
+        String email = txtEmail.getText().toString().trim();
+
+        if (user.isEmpty())
+        {
+            txtUser.setError("Usuario inválido");
+            return false;
+        }
+
+        if (password.isEmpty())
+        {
+            txtPassword.setError("Password inválido");
+            return false;
+        }
+
+        if (fullName.isEmpty()){
+            txtFullName.setError("Nombre inválido");
+            return false;
+        }
+
+        if (email.isEmpty()){
+            txtEmail.setError("Email inválido");
+            return false;
+        }
+
+        if(!isEmailValid(email))
+        {
+            txtEmail.setError("Email no tiene el formato correcto");
+            return false;
+        }
+
         return true;
     }
+
+    public boolean isEmailValid(String email) {
+        String regExpn =
+                "^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                        +"((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                        +"([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                        +"[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                        +"([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$";
+
+        CharSequence inputStr = email;
+
+        Pattern pattern = Pattern.compile(regExpn, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(inputStr);
+
+        if(matcher.matches())
+            return true;
+        else
+            return false;
+    }
+
 }
