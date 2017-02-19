@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         tvButton= (TextView) findViewById(R.id.tvButton);
         tvNewAccount = (TextView) findViewById(R.id.tvNew);
 
-
         events();
+
     }
 
     private void events() {
