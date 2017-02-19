@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         textPassword = (EditText) findViewById(R.id.textPass);
         tvButton= (TextView) findViewById(R.id.tvButton);
         tvNewAccount = (TextView) findViewById(R.id.tvNew);
-
+//test
         events();
 
     }
