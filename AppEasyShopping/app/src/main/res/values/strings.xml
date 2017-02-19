@@ -2,4 +2,10 @@
     <string name="app_name">EasyShopping GMD</string>
     <string name="nameCategorias">Categorias</string>
     <string name="descbtncategoria">ver</string>
+    <string name="create_account">Create account</string>
+    <string name="user_name">User name</string>
+    <string name="password_text">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="registrarme">Sign up</string>
 </resources>
