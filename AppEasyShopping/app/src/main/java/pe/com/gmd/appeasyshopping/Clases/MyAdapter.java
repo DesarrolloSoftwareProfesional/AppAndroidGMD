@@ -5,10 +5,14 @@ import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
+import pe.com.gmd.appeasyshopping.Entidades.Categoria;
 import pe.com.gmd.appeasyshopping.R;
 
 /**
@@ -16,14 +20,14 @@ import pe.com.gmd.appeasyshopping.R;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
-    private List<String> mDataset;
+    private List<Categoria> listCategorias;
 
-    public MyAdapter(List<String> myDataset) {
-        mDataset = myDataset;
+    public MyAdapter(List<Categoria> categorias) {
+        listCategorias = categorias;
     }
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return listCategorias.size();
     }
 
     @Override
@@ -35,15 +39,34 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.tvinomCategoria.setText(mDataset.get(position));
+    public void onBindViewHolder(final ViewHolder holder, int position) {
+        Categoria cat;
+        cat = listCategorias.get(position);
+        holder.txtNomCateria.setText(cat.getNombreCat());
+        holder.tvicantSubCategorias.setText(cat.getCantSubCat());
+        holder.tvicantProductos.setText(cat.getCantProductos());
+        holder.imgCategoria.setImageResource(cat.getDrawableImageID());
+        holder.btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombrecat;
+                nombrecat = "Seleccionar Categoria";
+                Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView tvinomCategoria;
+        TextView txtNomCateria,tvicantSubCategorias,tvicantProductos;
+        ImageView imgCategoria;
+        Button btnSeleccionarCat;
         public ViewHolder(View v) {
             super(v);
-            tvinomCategoria = (TextView) v.findViewById(R.id.txtNomCateria);
+            txtNomCateria = (TextView) v.findViewById(R.id.txtNomCateria);
+            tvicantSubCategorias = (TextView) v.findViewById(R.id.tvicantSubCategorias);
+            tvicantProductos = (TextView) v.findViewById(R.id.tvicantProductos);
+            imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
+            btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
         }
     }
 }

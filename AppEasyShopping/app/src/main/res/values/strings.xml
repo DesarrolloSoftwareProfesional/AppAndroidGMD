@@ -2,6 +2,9 @@
     <string name="app_name">EasyShopping GMD</string>
     <string name="nameCategorias">Categorias</string>
     <string name="descbtncategoria">ver</string>
+    <string name="nomCategoriaDefault">CATEGORIA</string>
+    <string name="cantCantSubcategorias">Cantidad de SubCategorias</string>
+    <string name="cantProductos">Cantidad de productos</string>
     <string name="create_account">Create account</string>
     <string name="user_name">User name</string>
     <string name="password_text">Password</string>
