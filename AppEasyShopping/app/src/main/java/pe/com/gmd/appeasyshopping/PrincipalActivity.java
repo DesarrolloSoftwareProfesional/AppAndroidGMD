@@ -1,5 +1,6 @@
 package pe.com.gmd.appeasyshopping;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -70,6 +71,12 @@ public class PrincipalActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_search:
                 Toast.makeText(this,"Buscar Categoria",Toast.LENGTH_SHORT).show();
+            case R.id.action_add:
+                Intent inte = new Intent(this,LoginActivity.class);
+                startActivity(inte);
+            case R.id.action_login:
+                Intent intelog = new Intent(this,LoginActivity.class);
+                startActivity(intelog);
             default:
             return super.onOptionsItemSelected(item);
         }

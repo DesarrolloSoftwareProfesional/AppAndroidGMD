@@ -47,7 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         holder.txtNomCateria.setText(cat.getNombreCat());
         holder.tvicantSubCategorias.setText(cat.getCantSubCat());
         holder.tvicantProductos.setText(cat.getCantProductos());
-       // holder.imgCategoria.setImageResource(cat.getDrawableImageID());
+         holder.imgCategoria.setImageResource(cat.getDrawableImageID());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -59,7 +59,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             txtNomCateria = (TextView) v.findViewById(R.id.txtNomCateria);
             tvicantSubCategorias = (TextView) v.findViewById(R.id.tvicantSubCategorias);
             tvicantProductos = (TextView) v.findViewById(R.id.tvicantProductos);
-            //imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
+            imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
             btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
             btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
                 @Override

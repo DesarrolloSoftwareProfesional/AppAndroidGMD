@@ -3,6 +3,14 @@
       xmlns:yourapp="http://schemas.android.com/apk/res-auto">
     <item android:id="@+id/action_search"
           android:icon="@mipmap/ic_action_search"
-          android:title="buscar"
+          android:title="Buscar Categoria"
+          yourapp:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_add"
+          android:icon="@android:drawable/ic_menu_add"
+          android:title="Agregar Productos"
+          yourapp:showAsAction="ifRoom"/>
+    <item android:id="@+id/action_login"
+          android:icon="@mipmap/ic_action_user"
+          android:title="Loguearse"
           yourapp:showAsAction="ifRoom"/>
 </menu>
