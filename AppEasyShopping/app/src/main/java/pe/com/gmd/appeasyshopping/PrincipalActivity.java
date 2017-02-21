@@ -77,7 +77,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 startActivity(inte);
                 break;
             case R.id.action_login:
-                Intent intelog = new Intent(this,NewAccountActivity.class);
+                Intent intelog = new Intent(this,LoginActivity.class);
                 startActivity(intelog);
                 break;
             default:
