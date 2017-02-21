@@ -1,5 +1,6 @@
 package pe.com.gmd.appeasyshopping.Clases;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.Layout;
 import android.view.LayoutInflater;
@@ -14,12 +15,13 @@ import java.util.List;
 
 import pe.com.gmd.appeasyshopping.Entidades.Categoria;
 import pe.com.gmd.appeasyshopping.R;
+import pe.com.gmd.appeasyshopping.SubCategoriasActivity;
 
 /**
  * Created by ASUS on 18/02/2017.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
+public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private List<Categoria> listCategorias;
 
     public MyAdapter(List<Categoria> categorias) {
@@ -45,28 +47,31 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
         holder.txtNomCateria.setText(cat.getNombreCat());
         holder.tvicantSubCategorias.setText(cat.getCantSubCat());
         holder.tvicantProductos.setText(cat.getCantProductos());
-        holder.imgCategoria.setImageResource(cat.getDrawableImageID());
-        holder.btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nombrecat;
-                nombrecat = "Seleccionar Categoria";
-                Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_LONG).show();
-            }
-        });
+       // holder.imgCategoria.setImageResource(cat.getDrawableImageID());
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNomCateria,tvicantSubCategorias,tvicantProductos;
-        ImageView imgCategoria;
-        Button btnSeleccionarCat;
+        public TextView txtNomCateria,tvicantSubCategorias,tvicantProductos;
+        public ImageView imgCategoria;
+        public Button btnSeleccionarCat;
         public ViewHolder(View v) {
             super(v);
             txtNomCateria = (TextView) v.findViewById(R.id.txtNomCateria);
             tvicantSubCategorias = (TextView) v.findViewById(R.id.tvicantSubCategorias);
             tvicantProductos = (TextView) v.findViewById(R.id.tvicantProductos);
-            imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
+            //imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
             btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
+            btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String nombrecat;
+                    nombrecat = txtNomCateria.getText().toString();
+                    Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(v.getContext(), SubCategoriasActivity.class);
+                    intent.putExtra("nomCategoria",nombrecat);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

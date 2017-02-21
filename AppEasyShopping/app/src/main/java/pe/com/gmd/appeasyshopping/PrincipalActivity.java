@@ -25,7 +25,6 @@ public class PrincipalActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private List<Categoria> listCat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +38,21 @@ public class PrincipalActivity extends AppCompatActivity {
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
         //mAdapter = new MyAdapter(Arrays.asList(getResources().getStringArray(R.array.Categorias)));
-        listCat = new ArrayList<Categoria>();
+        List<Categoria> listCat = new ArrayList();
         listCat.add(new Categoria("Instrumentos", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.instrumentos));
         listCat.add(new Categoria("accesorios", "28 Tipo de accesorios",
                 "100 Productos", R.drawable.accesorios));
         listCat.add(new Categoria("computacion", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.computacion));
-//        listCat.add(new Categoria("consolas", "28 Tipo de Instrumentos",
-//                "100 Productos", R.drawable.consolas));
-//        listCat.add(new Categoria("deportes", "28 Tipo de Instrumentos",
-//                "100 Productos", R.drawable.deportes));
-//        listCat.add(new Categoria("moda", "28 Tipo de Instrumentos",
-//                "100 Productos", R.drawable.moda));
-//        listCat.add(new Categoria("hogar", "28 Tipo de Instrumentos",
-//                "100 Productos", R.drawable.hogar));
+        listCat.add(new Categoria("consolas", "28 Tipo de Instrumentos",
+                "100 Productos", R.drawable.consolas));
+        listCat.add(new Categoria("deportes", "28 Tipo de Instrumentos",
+                "100 Productos", R.drawable.deportes));
+        listCat.add(new Categoria("moda", "28 Tipo de Instrumentos",
+                "100 Productos", R.drawable.moda));
+        listCat.add(new Categoria("hogar", "28 Tipo de Instrumentos",
+                "100 Productos", R.drawable.hogar));
 
         mAdapter = new MyAdapter(listCat);
         mRecyclerView.setAdapter(mAdapter);

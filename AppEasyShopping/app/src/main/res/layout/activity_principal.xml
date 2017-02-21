@@ -14,7 +14,7 @@
         android:textSize="18sp"
         android:textAlignment="center"
         android:padding="8dp"
-        android:layout_margin="10sp"
+        android:layout_margin="5sp"
         android:textColor="@color/white100"
         android:id="@+id/tviTitCategoria"
         />

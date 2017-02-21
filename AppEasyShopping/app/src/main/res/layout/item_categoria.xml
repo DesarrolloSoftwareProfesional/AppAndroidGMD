@@ -17,6 +17,8 @@
             android:id="@+id/imgCategoria"
             android:src="@drawable/accesorios"
             android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             />
         <TextView
             android:gravity="center"
@@ -54,8 +56,11 @@
             android:layout_toRightOf="@+id/imgCategoria"
             android:layout_alignParentRight="true"
             android:gravity="center"
+            android:textSize="14sp"
             android:text="@string/descbtncategoria"
-            android:layout_margin="5dp"
+            android:layout_margin="15dp"
+            android:padding="5dp"
+            android:textColor="@color/white100"
             android:id="@+id/btnSeleccionarCat"/>
     </RelativeLayout>
 
