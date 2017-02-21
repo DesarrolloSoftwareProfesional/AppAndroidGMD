@@ -71,14 +71,18 @@ public class PrincipalActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.action_search:
                 Toast.makeText(this,"Buscar Categoria",Toast.LENGTH_SHORT).show();
+                break;
             case R.id.action_add:
-                Intent inte = new Intent(this,LoginActivity.class);
+                Intent inte = new Intent(this,NewProductActivity.class);
                 startActivity(inte);
+                break;
             case R.id.action_login:
                 Intent intelog = new Intent(this,LoginActivity.class);
                 startActivity(intelog);
+                break;
             default:
-            return super.onOptionsItemSelected(item);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

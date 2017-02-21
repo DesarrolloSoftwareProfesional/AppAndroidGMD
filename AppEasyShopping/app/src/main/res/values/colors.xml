@@ -12,4 +12,8 @@
     <color name="Azalea">#ED6E60</color>
     <color name="AzaleaOriginal">#F7C5CB</color>
     <color name="HawkesBlue">#D5DDE6</color>
+    <color name="Yellow">#F7FE2E</color>
+    <color name="LightYellow">#F2F5A9</color>
+    <color name="blue">#5858FA</color>
+    <color name="red">#FF0040</color>
 </resources>

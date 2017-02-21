@@ -44,6 +44,7 @@
             android:textColorHint="@color/white100"
             android:hint="Password"
             android:imeOptions="actionDone"
+            android:inputType="textPassword"
             android:id="@+id/textPass"/>
         <TextView
             android:layout_width="match_parent"
