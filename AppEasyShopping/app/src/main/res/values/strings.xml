@@ -11,4 +11,7 @@
     <string name="full_name">Full name</string>
     <string name="email">Email</string>
     <string name="registrarme">Sign up</string>
+    <string name="nameProduct">Nombre</string>
+    <string name="nomProductoDefault">PRODUCTO</string>
+    <string name="precioProducto">Precio</string>
 </resources>

@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import pe.com.gmd.appeasyshopping.Entidades.Categoria;
+import pe.com.gmd.appeasyshopping.ProductActivity;
 import pe.com.gmd.appeasyshopping.R;
 import pe.com.gmd.appeasyshopping.SubCategoriasActivity;
 
@@ -67,7 +68,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     String nombrecat;
                     nombrecat = txtNomCateria.getText().toString();
                     Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(v.getContext(), SubCategoriasActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProductActivity.class);
                     intent.putExtra("nomCategoria",nombrecat);
                     v.getContext().startActivity(intent);
                 }

@@ -17,16 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".NewAccountActivity" />
         <activity android:name=".SubCategoriasActivity" />
-        <activity android:name=".NewProductActivity">
-        </activity>
-
+        <activity android:name=".NewProductActivity"></activity>
         <activity android:name=".NewProduct2Activity" />
-        <activity android:name=".NewProduct3Activity"></activity>
+        <activity android:name=".NewProduct3Activity" />
+        <activity android:name=".ProductActivity">
+
+
+        </activity>
     </application>
 
 </manifest>
