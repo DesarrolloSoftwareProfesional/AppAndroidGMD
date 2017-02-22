@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_new_product3"
     android:layout_width="match_parent"
@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:id="@+id/lilaHeader"
         android:padding="10dp"
         android:background="@color/red">
         <FrameLayout
@@ -62,14 +63,90 @@
                 android:id="@+id/tvOpcion3" />
         </FrameLayout>
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Selecciona una categoría"
+        android:id="@+id/tviTitDetalleVenta"
+        android:layout_below="@+id/lilaHeader"
+        android:textAlignment="center"
+        android:layout_margin="10dp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/Black100"
+        android:text="Detalle del Producto a registrar"
         android:textSize="20dp"/>
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:choiceMode="singleChoice">
-    </ListView>
-</LinearLayout>
+
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Nombre del Producto: "
+         android:layout_margin="10dp"
+         android:textSize="18sp"
+         android:textColor="@color/Black100"
+         android:layout_below="@+id/tviTitDetalleVenta"
+         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvinomProducto"
+        android:layout_margin="10sp"
+        android:textSize="15sp"
+        android:text="Laptop Asus"
+        android:layout_below="@+id/tviTitDetalleVenta"
+        android:layout_alignRight="@+id/tviTitDetalleVenta"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvinomProducto"
+        android:id="@+id/tvititDescProducto"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/Black100"
+        android:text="@string/nomtitDescProdudct"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:text="@string/DescProductoDefault"
+        android:layout_below="@+id/tvinomProducto"
+        android:id="@+id/tviDescProducto"
+        android:layout_alignLeft="@+id/tvinomProducto"
+        android:layout_alignStart="@+id/tvinomProducto"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/Black100"
+        android:text="Precio del Producto:          "
+        android:layout_below="@+id/tvititDescProducto"
+        android:id="@+id/tvititPrecProducto"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="S/. 4,000"
+        android:layout_margin="10sp"
+        android:textSize="15sp"
+        android:layout_below="@+id/tviDescProducto"
+        android:layout_toRightOf="@+id/tvititPrecProducto"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:textColor="@color/Black100"
+        android:text="Imagen del Producto:"
+        android:layout_below="@+id/tvititPrecProducto"
+        android:id="@+id/tvititImgProducto"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/accesorios"
+        android:layout_centerInParent="true"
+        android:padding="10dp"
+        android:layout_below="@+id/tvititImgProducto"/>
+</RelativeLayout>
