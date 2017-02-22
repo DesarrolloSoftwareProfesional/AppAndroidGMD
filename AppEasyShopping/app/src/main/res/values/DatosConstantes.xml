@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Categorias">
-        <item>Categoria 1</item>
-        <item>Categoria 2</item>
-        <item>Categoria 3</item>
-        <item>Categoria 4</item>
-        <item>Categoria 5</item>
-        <item>Categoria 6</item>
-        <item>Categoria 7</item>
+        <item>Instrumentos</item>
+        <item>Accesorios</item>
+        <item>Moda</item>
+        <item>Consolas</item>
+        <item>Deportes</item>
+        <item>Hogar</item>
+        <item>Computación</item>
     </string-array>
 </resources>
