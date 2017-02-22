@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class NewProduct2Activity extends AppCompatActivity {
@@ -26,6 +29,31 @@ public class NewProduct2Activity extends AppCompatActivity {
         etDescription = (EditText) findViewById(R.id.etDescription);
         etPrecio = (EditText) findViewById(R.id.etPrecio);
         events();
+        cargarSpinner();
+    }
+
+    private void cargarSpinner(){
+        final Spinner dropDownSpinner = (Spinner) findViewById(R.id.dropDownSpinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.Categorias, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropDownSpinner.setAdapter(adapter);
+        dropDownSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(NewProduct2Activity.this, dropDownSpinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(NewProduct2Activity.this, "Nada fue seleccionado", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+        Spinner dialogSpinner = (Spinner) findViewById(R.id.dialogSpinner);
+        dialogSpinner.setAdapter(adapter);
     }
 
     private void events() {

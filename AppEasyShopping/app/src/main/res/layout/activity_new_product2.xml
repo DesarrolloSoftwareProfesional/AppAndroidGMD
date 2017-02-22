@@ -77,8 +77,8 @@
         android:layout_height="wrap_content"
         android:hint="Descripción"
         android:inputType="textMultiLine"
-        android:lines="6"
-        android:minLines="6"
+        android:lines="5"
+        android:minLines="5"
         android:id="@+id/etDescription"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
@@ -89,12 +89,26 @@
         android:layout_height="wrap_content"
         android:hint="Precio S/."
         android:id="@+id/etPrecio"
-        android:layout_marginBottom="50dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:imeOptions="actionDone"
         android:inputType="number"/>
+
+    <Spinner
+        android:id="@+id/dropDownSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:spinnerMode="dropdown" />
+
+    <Spinner
+        android:id="@+id/dialogSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingBottom="70dp"
+        android:spinnerMode="dialog" />
 
     <FrameLayout
         android:layout_width="46dp"
