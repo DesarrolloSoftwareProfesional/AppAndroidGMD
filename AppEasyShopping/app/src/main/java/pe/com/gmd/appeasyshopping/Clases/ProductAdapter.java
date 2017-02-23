@@ -43,7 +43,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
         Producto producto = listaProductos.get(position);
         holder.txtNombre.setText(producto.getNombre());
-        holder.txtPrecio.setText(producto.getPrecio());
+       // holder.txtPrecio.setText(producto.getPrecio());
         holder.txtCantProductos.setText(producto.getCantidad());
         holder.imgProducto.setImageResource(producto.getDrawableImageID());
     }

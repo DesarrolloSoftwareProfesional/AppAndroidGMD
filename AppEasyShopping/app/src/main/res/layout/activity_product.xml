@@ -10,7 +10,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nameProduct"
         android:textSize="18sp"
         android:textAlignment="center"
         android:padding="8dp"

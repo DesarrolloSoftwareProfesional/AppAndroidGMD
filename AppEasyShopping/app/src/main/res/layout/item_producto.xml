@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:id="@+id/cardProducto"
     android:layout_margin="5dp"
-    app:cardCornerRadius="5dp">
+    app:cardCornerRadius="5dp"
+    >
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <ImageView
-            android:layout_width="180dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/imgProducto"
             android:src="@drawable/accesorios"
-            android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             />
@@ -24,30 +24,29 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/imgProducto"
+            android:layout_below="@+id/imgProducto"
             android:id="@+id/txtNomProducto"
             android:text="@string/nomProductoDefault"
-            android:padding="10dp"
             android:textSize="18sp"
             android:textColor="@color/cardview_dark_background"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_below="@+id/txtNomProducto"
-            android:layout_toRightOf="@id/imgProducto"
-            android:text="@string/precioProducto"
-            android:paddingLeft="12dp"
-            android:paddingTop="5dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtPrecio"/>
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/cantProductos"
-            android:layout_below="@id/txtPrecio"
-            android:layout_toRightOf="@+id/imgProducto"
-            android:paddingTop="5dp"
-            android:paddingLeft="12dp"
+            android:layout_below="@id/txtNomProducto"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:gravity="center"
             android:id="@+id/txtCantProductos"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNomProducto"
+            android:paddingBottom="4dp"
+            android:paddingTop="4dp"
+            android:gravity="center"
+            android:id="@+id/txtPrecio"/>
+
 
     </RelativeLayout>
 

@@ -3,6 +3,7 @@
     package="pe.com.gmd.appeasyshopping">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -11,13 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".PrincipalActivity">
+
+        </activity>
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity android:name=".LoginActivity"></activity>
         <activity android:name=".NewAccountActivity" />
         <activity android:name=".SubCategoriasActivity" />
         <activity android:name=".NewProductActivity"></activity>
