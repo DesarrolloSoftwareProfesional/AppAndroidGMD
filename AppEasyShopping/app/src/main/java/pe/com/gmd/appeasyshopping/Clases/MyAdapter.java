@@ -1,8 +1,8 @@
-package pe.com.gmd.appeasyshopping.Clases;
+package pe.com.gmd.appeasyshopping.clases;
 
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +11,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.security.PublicKey;
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.Entidades.Categoria;
+import pe.com.gmd.appeasyshopping.entidades.Categoria;
 import pe.com.gmd.appeasyshopping.ProductActivity;
 import pe.com.gmd.appeasyshopping.R;
-import pe.com.gmd.appeasyshopping.SubCategoriasActivity;
 
 /**
  * Created by ASUS on 18/02/2017.
@@ -55,14 +55,16 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
         public TextView txtNomCateria,tvicantSubCategorias,tvicantProductos;
         public ImageView imgCategoria;
         public Button btnSeleccionarCat;
+        public CardView CviCategoria;
         public ViewHolder(View v) {
             super(v);
             txtNomCateria = (TextView) v.findViewById(R.id.txtNomCateria);
             tvicantSubCategorias = (TextView) v.findViewById(R.id.tvicantSubCategorias);
             tvicantProductos = (TextView) v.findViewById(R.id.tvicantProductos);
             imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
-            btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
-            btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
+            //btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
+            CviCategoria  = (CardView) v.findViewById(R.id.CviCategoria);
+            CviCategoria.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     String nombrecat;
@@ -73,6 +75,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     v.getContext().startActivity(intent);
                 }
             });
+//            btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    String nombrecat;
+//                    nombrecat = txtNomCateria.getText().toString();
+//                    Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(v.getContext(), ProductActivity.class);
+//                    intent.putExtra("nomCategoria",nombrecat);
+//                    v.getContext().startActivity(intent);
+//                }
+//            });
         }
     }
 }
