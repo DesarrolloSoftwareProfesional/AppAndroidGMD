@@ -46,14 +46,14 @@ public class PrincipalActivity extends AppCompatActivity {
                 "100 Productos", R.drawable.accesorios));
         listCat.add(new Categoria("computacion", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.computacion));
-      /* listCat.add(new Categoria("consolas", "28 Tipo de Instrumentos",
+        listCat.add(new Categoria("consolas", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.consolas));
         listCat.add(new Categoria("deportes", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.deportes));
         listCat.add(new Categoria("moda", "28 Tipo de Instrumentos",
                 "100 Productos", R.drawable.moda));
         listCat.add(new Categoria("hogar", "28 Tipo de Instrumentos",
-                "100 Productos", R.drawable.hogar));*/
+                "100 Productos", R.drawable.hogar));
 
         mAdapter = new MyAdapter(listCat);
         mRecyclerView.setAdapter(mAdapter);
