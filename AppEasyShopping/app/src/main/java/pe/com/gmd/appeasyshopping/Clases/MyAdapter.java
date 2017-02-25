@@ -62,7 +62,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             tvicantSubCategorias = (TextView) v.findViewById(R.id.tvicantSubCategorias);
             tvicantProductos = (TextView) v.findViewById(R.id.tvicantProductos);
             imgCategoria = (ImageView) v.findViewById(R.id.imgCategoria);
-            btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
+            //btnSeleccionarCat = (Button) v.findViewById(R.id.btnSeleccionarCat);
             CviCategoria  = (CardView) v.findViewById(R.id.CviCategoria);
             CviCategoria.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -75,17 +75,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
                     v.getContext().startActivity(intent);
                 }
             });
-            btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    String nombrecat;
-                    nombrecat = txtNomCateria.getText().toString();
-                    Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(v.getContext(), ProductActivity.class);
-                    intent.putExtra("nomCategoria",nombrecat);
-                    v.getContext().startActivity(intent);
-                }
-            });
+//            btnSeleccionarCat.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//                    String nombrecat;
+//                    nombrecat = txtNomCateria.getText().toString();
+//                    Toast.makeText(v.getContext(),nombrecat,Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(v.getContext(), ProductActivity.class);
+//                    intent.putExtra("nomCategoria",nombrecat);
+//                    v.getContext().startActivity(intent);
+//                }
+//            });
         }
     }
 }
