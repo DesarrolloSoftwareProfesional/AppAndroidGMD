@@ -14,6 +14,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import pe.com.gmd.appeasyshopping.Entidades.Producto;
+import pe.com.gmd.appeasyshopping.ProductListActivity;
 import pe.com.gmd.appeasyshopping.R;
 
 /**
@@ -64,6 +65,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             txtPrecio = (TextView) v.findViewById(R.id.txtPrecio);
             txtCantProductos = (TextView) v.findViewById(R.id.txtCantProductos);
             imgProducto = (ImageView) v.findViewById(R.id.imgProducto);
+
+            imgProducto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    String nombre = txtNombre.getText().toString();
+                    Toast.makeText(v.getContext(),nombre,Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(v.getContext(), ProductListActivity.class);
+                    intent.putExtra("nomTipoProducto",nombre);
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
 }

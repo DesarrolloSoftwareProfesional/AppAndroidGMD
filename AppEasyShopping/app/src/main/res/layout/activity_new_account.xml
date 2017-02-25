@@ -73,7 +73,6 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/Azalea"
             android:padding="16dp"
             android:layout_alignParentRight="true"
             android:gravity="center"
@@ -81,6 +80,8 @@
             android:textSize="18sp"
             android:textAllCaps="false"
             android:id="@+id/btnRegistro"
+            android:background="@drawable/ripple_drawable"
+            android:elevation="15dp"
             />
 
     </LinearLayout>

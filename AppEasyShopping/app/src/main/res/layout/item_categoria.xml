@@ -3,11 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="center"
     android:id="@+id/CviCategoria"
     android:layout_margin="5dp"
-    app:cardCornerRadius="5dp">
+   >
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -51,7 +50,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/Azalea"
+            android:background="?android:attr/selectableItemBackground"
             android:layout_below="@+id/tvicantProductos"
             android:layout_toRightOf="@+id/imgCategoria"
             android:layout_alignParentRight="true"
@@ -60,7 +59,7 @@
             android:text="@string/descbtncategoria"
             android:layout_margin="15dp"
             android:padding="5dp"
-            android:textColor="@color/white100"
+            android:textColor="@color/Azalea"
             android:id="@+id/btnSeleccionarCat"/>
     </RelativeLayout>
 
