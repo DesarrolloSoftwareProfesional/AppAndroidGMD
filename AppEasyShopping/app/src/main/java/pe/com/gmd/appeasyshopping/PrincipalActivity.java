@@ -1,7 +1,6 @@
 package pe.com.gmd.appeasyshopping;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,16 +10,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
-import pe.com.gmd.appeasyshopping.Clases.MyAdapter;
-import pe.com.gmd.appeasyshopping.Entidades.Categoria;
+import pe.com.gmd.appeasyshopping.clases.MyAdapter;
+import pe.com.gmd.appeasyshopping.entidades.Categoria;
 
 public class PrincipalActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
