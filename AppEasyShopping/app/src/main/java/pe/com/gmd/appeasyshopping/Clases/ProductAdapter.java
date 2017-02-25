@@ -1,19 +1,17 @@
-package pe.com.gmd.appeasyshopping.Clases;
+package pe.com.gmd.appeasyshopping.clases;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.Entidades.Producto;
+import pe.com.gmd.appeasyshopping.entidades.Producto;
 import pe.com.gmd.appeasyshopping.ProductListActivity;
 import pe.com.gmd.appeasyshopping.R;
 
