@@ -121,6 +121,7 @@ $app->put("/usuariosApi/",function() use ($app)
 		$dbh->bindParam(5,$Usu_Nombres);
 		$dbh->bindParam(6,$Usu_CorreoElectronico);
 		$dbh->bindParam(7,$Usu_EstadoRegistro);
+		$dbh->bindParam(8,$Usu_Identificador);
         $dbh->execute();
         
         $connection=null;
