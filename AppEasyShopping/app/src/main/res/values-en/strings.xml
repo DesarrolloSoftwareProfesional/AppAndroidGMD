@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">EasyShopping GMD</string>
+    <string name="nameCategorias">Categories</string>
+    <string name="descbtncategoria">see</string>
+    <string name="nomCategoriaDefault">CATEGORY</string>
+    <string name="cantCantSubcategorias">Number of Subcategories</string>
+    <string name="cantProductos">Quantity of products</string>
+    <string name="create_account">Create account</string>
+    <string name="user_name">User name</string>
+    <string name="password_text">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="registrarme">Sign up</string>
+    <string name="nameProduct">Name</string>
+    <string name="nomProductoDefault">PRODUCT</string>
+    <string name="precioProducto">Price</string>
+    <string name="DescProductoDefault">Product for sale only for this year. Ask for GMD</string>
+    <string name="nomtitDescProdudct">Product description:</string>
+</resources>
