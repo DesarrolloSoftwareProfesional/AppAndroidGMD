@@ -84,6 +84,7 @@
             android:background="@drawable/ripple_drawable"
             android:elevation="15dp"
             android:textColor="@color/white60"
+            
             />
 
     </LinearLayout>
