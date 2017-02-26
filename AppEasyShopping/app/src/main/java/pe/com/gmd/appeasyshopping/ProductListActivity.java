@@ -39,7 +39,7 @@ public class ProductListActivity extends AppCompatActivity {
         lista.add(new Producto("Guitarra Martin Smith Acustica Jumbo Importada D-carlo","","Precio: $1560.50", R.drawable.guitarra3));
         lista.add(new Producto("Guitarra Electrica Importada Starsun Lespaul Custom /d-carlo","","Precio: $1560.50", R.drawable.guitarra4));
 
-        mAdapter = new ProductAdapter(lista);
+        mAdapter = new ProductAdapter(lista, true);
         mRecyclerView.setAdapter(mAdapter);
     }
 }

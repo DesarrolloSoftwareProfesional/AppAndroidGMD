@@ -39,7 +39,7 @@ public class ProductActivity extends AppCompatActivity {
         lista.add(new Producto("Violin","Precio: $1560.50","Cantidad: 30", R.drawable.violin));
         lista.add(new Producto("Saxofón","Precio: $1560.50","Cantidad: 10", R.drawable.saxo));
 
-        mAdapter = new ProductAdapter(lista);
+        mAdapter = new ProductAdapter(lista, false);
         mRecyclerView.setAdapter(mAdapter);
 
     }

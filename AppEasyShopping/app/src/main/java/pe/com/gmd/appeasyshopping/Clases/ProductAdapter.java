@@ -12,6 +12,7 @@ import android.widget.Toast;
 import java.util.List;
 
 import pe.com.gmd.appeasyshopping.Entidades.Producto;
+import pe.com.gmd.appeasyshopping.ProductDetailActivity;
 import pe.com.gmd.appeasyshopping.ProductListActivity;
 import pe.com.gmd.appeasyshopping.R;
 
@@ -22,10 +23,12 @@ import pe.com.gmd.appeasyshopping.R;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
     private List<Producto> listaProductos;
+    private static Boolean irDetalle = false;
 
-    public ProductAdapter(List<Producto> productos) {
+    public ProductAdapter(List<Producto> productos, Boolean irActividadDetalle) {
 
         listaProductos = productos;
+        irDetalle = irActividadDetalle;
     }
 
     @Override
@@ -69,10 +72,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 public void onClick(View v) {
 
                     String nombre = txtNombre.getText().toString();
+                    String precio = txtCantProductos.getText().toString();
                     Toast.makeText(v.getContext(),nombre,Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(v.getContext(), ProductListActivity.class);
-                    intent.putExtra("nomTipoProducto",nombre);
-                    v.getContext().startActivity(intent);
+
+                    if (irDetalle == true) {
+                        Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
+                        intent.putExtra("nombreProducto", nombre);
+                        intent.putExtra("precioProducto", precio);
+                        v.getContext().startActivity(intent);
+                    }
+                    else {
+                        Intent intent = new Intent(v.getContext(), ProductListActivity.class);
+                        intent.putExtra("nomTipoProducto", nombre);
+                        v.getContext().startActivity(intent);
+                    }
                 }
             });
         }
