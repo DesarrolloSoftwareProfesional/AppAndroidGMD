@@ -1,1 +1,5 @@
-https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+https://www.ginperu.com/SlimAppEasy/apirest/index.php
+/usuariosApi
+/categoriasApi
+/subCategoriasApi
+/productosApi
