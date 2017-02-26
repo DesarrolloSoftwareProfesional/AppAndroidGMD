@@ -34,10 +34,10 @@ public class ProductListActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         List<Producto> lista = new ArrayList();
-        lista.add(new Producto("Guitarra Acústica Importada, Mastil Reforzado + Acccesorios","","Precio: $220.30", R.drawable.guitarra1));
-        lista.add(new Producto("Guitarra Erasmo Falcon Clasica De Estudio D-carlo","","Precio: $320.30", R.drawable.guitarra2));
-        lista.add(new Producto("Guitarra Martin Smith Acustica Jumbo Importada D-carlo","","Precio: $1560.50", R.drawable.guitarra3));
-        lista.add(new Producto("Guitarra Electrica Importada Starsun Lespaul Custom /d-carlo","","Precio: $1560.50", R.drawable.guitarra4));
+        lista.add(new Producto("1","Guitarra Acústica Importada, Mastil Reforzado + Acccesorios","","Precio: $220.30", R.drawable.guitarra1));
+        lista.add(new Producto("2","Guitarra Erasmo Falcon Clasica De Estudio D-carlo","","Precio: $320.30", R.drawable.guitarra2));
+        lista.add(new Producto("3","Guitarra Martin Smith Acustica Jumbo Importada D-carlo","","Precio: $1560.50", R.drawable.guitarra3));
+        lista.add(new Producto("4","Guitarra Electrica Importada Starsun Lespaul Custom /d-carlo","","Precio: $1560.50", R.drawable.guitarra4));
 
         mAdapter = new ProductAdapter(lista, true);
         mRecyclerView.setAdapter(mAdapter);

@@ -33,6 +33,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_producto, parent, false);
         ProductAdapter.ViewHolder vh = new ProductAdapter.ViewHolder(v);
@@ -48,6 +49,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
        // holder.txtPrecio.setText(producto.getPrecio());
         holder.txtCantProductos.setText(producto.getCantidad());
         holder.imgProducto.setImageResource(producto.getDrawableImageID());
+        holder.txtCodigoProducto.setText(producto.getCodigo());
+
     }
 
     @Override
@@ -57,7 +60,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView txtNombre,txtPrecio,txtCantProductos;
+        public TextView txtNombre,txtPrecio,txtCantProductos, txtCodigoProducto;
         public ImageView imgProducto;
 
         public ViewHolder(View v) {
@@ -66,6 +69,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             txtPrecio = (TextView) v.findViewById(R.id.txtPrecio);
             txtCantProductos = (TextView) v.findViewById(R.id.txtCantProductos);
             imgProducto = (ImageView) v.findViewById(R.id.imgProducto);
+            txtCodigoProducto = (TextView) v.findViewById(R.id.txtCodigo);
 
             imgProducto.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -73,12 +77,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
 
                     String nombre = txtNombre.getText().toString();
                     String precio = txtCantProductos.getText().toString();
-                    Toast.makeText(v.getContext(),nombre,Toast.LENGTH_SHORT).show();
+                    String codigo = txtCodigoProducto.getText().toString();
+                    //Toast.makeText(v.getContext(),nombre,Toast.LENGTH_SHORT).show();
 
                     if (irDetalle == true) {
                         Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
                         intent.putExtra("nombreProducto", nombre);
                         intent.putExtra("precioProducto", precio);
+                        intent.putExtra("codigoProducto", codigo);
                         v.getContext().startActivity(intent);
                     }
                     else {
