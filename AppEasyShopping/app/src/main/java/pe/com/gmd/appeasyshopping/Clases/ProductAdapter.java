@@ -1,4 +1,4 @@
-package pe.com.gmd.appeasyshopping.clases;
+package pe.com.gmd.appeasyshopping.Clases;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -11,12 +11,12 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.entidades.Producto;
+import pe.com.gmd.appeasyshopping.Entidades.Producto;
 import pe.com.gmd.appeasyshopping.ProductListActivity;
 import pe.com.gmd.appeasyshopping.R;
 
 /**
- * Created by Cecilia on 20/02/2017.
+ *   Created by Cecilia on 20/02/2017.
  */
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
