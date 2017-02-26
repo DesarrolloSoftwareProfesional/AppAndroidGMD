@@ -16,4 +16,7 @@
     <string name="precioProducto">Price</string>
     <string name="DescProductoDefault">Product for sale only for this year. Ask for GMD</string>
     <string name="nomtitDescProdudct">Product description:</string>
+    <string name="descCamposInvalidos">Invalid fields...</string>
+    <string name="alertIngresarNombre">You must enter a name</string>
+    <string name="alertIngresarContrasenia">You must enter a password</string>
 </resources>
