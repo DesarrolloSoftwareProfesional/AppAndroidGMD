@@ -19,4 +19,6 @@
     <string name="descCamposInvalidos">Campos inválidos...</string>
     <string name="alertIngresarNombre">Debe ingresar un nombre</string>
     <string name="alertIngresarContrasenia">Debe ingresar un password</string>
+    <string name="seleccionarCantidad">Cantidad</string>
+    <string name="comprar">Comprar</string>
 </resources>
