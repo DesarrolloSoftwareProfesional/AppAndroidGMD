@@ -13,8 +13,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.clases.MyAdapter;
-import pe.com.gmd.appeasyshopping.entidades.Categoria;
+import pe.com.gmd.appeasyshopping.Clases.MyAdapter;
+import pe.com.gmd.appeasyshopping.Entidades.Categoria;
 
 public class PrincipalActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;

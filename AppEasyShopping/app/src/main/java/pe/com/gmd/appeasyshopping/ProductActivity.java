@@ -8,8 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.clases.ProductAdapter;
-import pe.com.gmd.appeasyshopping.entidades.Producto;
+import pe.com.gmd.appeasyshopping.Clases.ProductAdapter;
+import pe.com.gmd.appeasyshopping.Entidades.Producto;
 
 import static pe.com.gmd.appeasyshopping.R.id.prodRecyclerView;
 

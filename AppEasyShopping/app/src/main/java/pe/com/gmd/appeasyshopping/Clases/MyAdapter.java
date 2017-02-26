@@ -1,4 +1,4 @@
-package pe.com.gmd.appeasyshopping.clases;
+package pe.com.gmd.appeasyshopping.Clases;
 
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -11,10 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.security.PublicKey;
 import java.util.List;
 
-import pe.com.gmd.appeasyshopping.entidades.Categoria;
+import pe.com.gmd.appeasyshopping.Entidades.Categoria;
 import pe.com.gmd.appeasyshopping.ProductActivity;
 import pe.com.gmd.appeasyshopping.R;
 

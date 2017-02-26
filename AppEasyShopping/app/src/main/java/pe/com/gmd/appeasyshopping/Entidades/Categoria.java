@@ -1,4 +1,4 @@
-package pe.com.gmd.appeasyshopping.entidades;
+package pe.com.gmd.appeasyshopping.Entidades;
 
 /**
  * Created by ASUS on 19/02/2017.

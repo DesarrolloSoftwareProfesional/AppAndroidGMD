@@ -1,4 +1,4 @@
-package pe.com.gmd.appeasyshopping.entidades;
+package pe.com.gmd.appeasyshopping.Entidades;
 
 /**
  * Created by Cecilia on 20/02/2017.
