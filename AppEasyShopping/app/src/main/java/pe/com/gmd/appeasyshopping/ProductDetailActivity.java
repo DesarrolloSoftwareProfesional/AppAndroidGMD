@@ -3,7 +3,11 @@ package pe.com.gmd.appeasyshopping;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +23,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product_detail);
 
         obtenerControles();
+      //  cargarCantidades();
         cargarDatosProducto();
     }
 
@@ -69,8 +74,28 @@ public class ProductDetailActivity extends AppCompatActivity {
             }
 
         }
+    }
 
+    private void cargarCantidades(){
 
+        final Spinner dropDownSpinner = (Spinner) findViewById(R.id.spCantidad);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.Cantidad, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropDownSpinner.setAdapter(adapter);
+        dropDownSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+              //  Toast.makeText(ProductDetailActivity.this, dropDownSpinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Toast.makeText(ProductDetailActivity.this, "No ha seleccionado una cantidad", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Spinner dialogSpinner = (Spinner) findViewById(R.id.spCantidad);
+        dialogSpinner.setAdapter(adapter);
     }
 }

@@ -16,4 +16,5 @@
     <string name="precioProducto">Precio</string>
     <string name="DescProductoDefault">Producto en venta solo por este año. Preguntar por GMD</string>
     <string name="nomtitDescProdudct">Descripción del Producto:</string>
+    <string name="seleccionarCantidad">Cantidad</string>
 </resources>

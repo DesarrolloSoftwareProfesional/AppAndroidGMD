@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="Categorias">
-        <item>Categoria 1</item>
-        <item>Categoria 2</item>
-        <item>Categoria 3</item>
-        <item>Categoria 4</item>
-        <item>Categoria 5</item>
-        <item>Categoria 6</item>
-        <item>Categoria 7</item>
+        <item>Instrumentos</item>
+        <item>Accesorios</item>
+        <item>Computación</item>
+        <item>Consolas</item>
+        <item>Deportes</item>
+        <item>Moda</item>
+        <item>Hogar</item>
+    </string-array>
+    <string-array name="Cantidad">
+        <item>1 unidad</item>
+        <item>2 unidades</item>
+        <item>3 unidades</item>
+        <item>4 unidades</item>
+        <item>5 unidades</item>
+        <item>6 unidades</item>
+        <item>Más de 6 unidades</item>
     </string-array>
 </resources>
