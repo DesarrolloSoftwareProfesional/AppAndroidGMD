@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -20,9 +21,19 @@ public class NewProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_product);
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         events();
     }
+
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }*/
 
     private void events() {
         findViewById(R.id.btnOk1).setOnClickListener(new View.OnClickListener() {

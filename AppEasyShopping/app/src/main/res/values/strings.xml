@@ -28,4 +28,6 @@
     <string name="msgNombreInvalido">Nombre inválido</string>
     <string name="msgEmailInvalido">Correo inválido</string>
     <string name="msgEmailFormatoInvalido">Correo no tiene el formato correcto</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
