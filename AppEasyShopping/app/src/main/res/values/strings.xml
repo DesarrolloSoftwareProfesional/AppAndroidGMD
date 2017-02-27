@@ -21,4 +21,11 @@
     <string name="alertIngresarContrasenia">Debe ingresar un password</string>
     <string name="seleccionarCantidad">Cantidad</string>
     <string name="comprar">Comprar</string>
+    <string name="msgIngresoUsuarioExitoso">Ingreso de usuario exitoso</string>
+    <string name="msgIngresoUsuarioErrone">Ingreso de datos incorrecto</string>
+    <string name="msgUsuarioInvalido">Usuario inválido</string>
+    <string name="msgPasswordInvalido">Contraseña inválido</string>
+    <string name="msgNombreInvalido">Nombre inválido</string>
+    <string name="msgEmailInvalido">Correo inválido</string>
+    <string name="msgEmailFormatoInvalido">Correo no tiene el formato correcto</string>
 </resources>

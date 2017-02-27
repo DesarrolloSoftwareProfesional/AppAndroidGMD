@@ -41,13 +41,13 @@ public class NewAccountActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if(validateFormError())
                 {
-                    Toast.makeText(NewAccountActivity.this, "Ingreso de usuario exitoso",
+                    Toast.makeText(NewAccountActivity.this, getResources().getString(R.string.msgIngresoUsuarioExitoso),
                             Toast.LENGTH_SHORT).show();
                    gotoLogin();
 
                 }else
                 {
-                    Toast.makeText(NewAccountActivity.this, "Ingreso de datos incorrecto",
+                    Toast.makeText(NewAccountActivity.this, getResources().getString(R.string.msgIngresoUsuarioErrone),
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -71,29 +71,29 @@ public class NewAccountActivity extends AppCompatActivity {
 
         if (user.isEmpty())
         {
-            txtUser.setError("Usuario inválido");
+            txtUser.setError(getResources().getString(R.string.msgUsuarioInvalido));
             return false;
         }
 
         if (password.isEmpty())
         {
-            txtPassword.setError("Password inválido");
+            txtPassword.setError(getResources().getString(R.string.msgPasswordInvalido));
             return false;
         }
 
         if (fullName.isEmpty()){
-            txtFullName.setError("Nombre inválido");
+            txtFullName.setError(getResources().getString(R.string.msgNombreInvalido));
             return false;
         }
 
         if (email.isEmpty()){
-            txtEmail.setError("Email inválido");
+            txtEmail.setError(getResources().getString(R.string.msgEmailInvalido));
             return false;
         }
 
         if(!isEmailValid(email))
         {
-            txtEmail.setError("Email no tiene el formato correcto");
+            txtEmail.setError(getResources().getString(R.string.msgEmailFormatoInvalido));
             return false;
         }
 
