@@ -1,6 +1,7 @@
 package pe.com.gmd.appeasyshopping;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -20,12 +22,27 @@ public class PrincipalActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-
+    private FloatingActionButton mFloatingActionButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+        cargarUI();
+    }
+    private void cargarUI(){
         cargarRecycleView();
+        cargarEventos();
+    }
+
+    private void cargarEventos(){
+        mFloatingActionButton = (FloatingActionButton)findViewById(R.id.FlAcBtnNewProductos);
+        mFloatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent inte = new Intent(v.getContext(),NewProductActivity.class);
+                startActivity(inte);
+            }
+        });
     }
 
     private void cargarRecycleView(){

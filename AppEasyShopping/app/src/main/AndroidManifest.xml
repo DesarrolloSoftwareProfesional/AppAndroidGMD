@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PrincipalActivity"></activity>
+        <activity android:name=".PrincipalActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +24,9 @@
         <activity android:name=".NewProductActivity" />
         <activity android:name=".NewProduct2Activity" />
         <activity android:name=".NewProduct3Activity" />
-        <activity android:name=".ProductActivity"></activity>
-        <activity android:name=".ProductListActivity"></activity>
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".ProductListActivity" />
+        <activity android:name=".ProductDetailActivity"></activity>
     </application>
 
 </manifest>

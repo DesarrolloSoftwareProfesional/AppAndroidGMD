@@ -26,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         textPassword = (EditText) findViewById(R.id.textPass);
         tvButton= (TextView) findViewById(R.id.tvButton);
         tvNewAccount = (TextView) findViewById(R.id.tvNew);
-
         events();
     }
 
@@ -38,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
                     gotoMain();
                 }
                 else{
-                    Toast.makeText(LoginActivity.this, "Campos inválidos...",
+                    Toast.makeText(LoginActivity.this, getResources().getString(R.string.descCamposInvalidos) ,
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -74,16 +73,15 @@ public class LoginActivity extends AppCompatActivity {
 
         if(name.isEmpty())
         {
-            textUser.setError("Debe ingresar un nombre");
+            textUser.setError(getResources().getString(R.string.alertIngresarNombre));
             return false;
         }
 
         if(pass.isEmpty())
         {
-            textPassword.setError("Debe ingresar un password");
+            textPassword.setError(getResources().getString(R.string.alertIngresarContrasenia));
             return false;
         }
-
         return true;
     }
 }

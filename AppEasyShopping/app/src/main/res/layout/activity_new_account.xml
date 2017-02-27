@@ -78,10 +78,13 @@
             android:gravity="center"
             android:text="@string/registrarme"
             android:textSize="18sp"
+            android:layout_marginTop="15dp"
             android:textAllCaps="false"
             android:id="@+id/btnRegistro"
             android:background="@drawable/ripple_drawable"
             android:elevation="15dp"
+            android:textColor="@color/white60"
+
             />
 
     </LinearLayout>

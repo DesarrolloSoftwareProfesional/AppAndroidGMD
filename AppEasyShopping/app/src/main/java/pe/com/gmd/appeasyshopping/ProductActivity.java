@@ -34,12 +34,12 @@ public class ProductActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         List<Producto> lista = new ArrayList();
-        lista.add(new Producto("Guitarra","Precio: $220.30","Cantidad: 50", R.drawable.guitarra));
-        lista.add(new Producto("Trompeta","Precio: $320.30","Cantidad: 100", R.drawable.trompeta));
-        lista.add(new Producto("Violin","Precio: $1560.50","Cantidad: 30", R.drawable.violin));
-        lista.add(new Producto("Saxofón","Precio: $1560.50","Cantidad: 10", R.drawable.saxo));
+        lista.add(new Producto("1","Guitarra","Precio: $220.30","Cantidad: 50", R.drawable.guitarra));
+        lista.add(new Producto("2","Trompeta","Precio: $320.30","Cantidad: 100", R.drawable.trompeta));
+        lista.add(new Producto("3","Violin","Precio: $1560.50","Cantidad: 30", R.drawable.violin));
+        lista.add(new Producto("4","Saxofón","Precio: $1560.50","Cantidad: 10", R.drawable.saxo));
 
-        mAdapter = new ProductAdapter(lista);
+        mAdapter = new ProductAdapter(lista, false);
         mRecyclerView.setAdapter(mAdapter);
 
     }

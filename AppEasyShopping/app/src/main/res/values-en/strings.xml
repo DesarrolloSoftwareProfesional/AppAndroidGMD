@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">EasyShopping GMD</string>
+    <string name="nameCategorias">Categories</string>
+    <string name="descbtncategoria">see</string>
+    <string name="nomCategoriaDefault">CATEGORY</string>
+    <string name="cantCantSubcategorias">Number of Subcategories</string>
+    <string name="cantProductos">Quantity of products</string>
+    <string name="create_account">Create account</string>
+    <string name="user_name">User name</string>
+    <string name="password_text">Password</string>
+    <string name="full_name">Full name</string>
+    <string name="email">Email</string>
+    <string name="registrarme">Sign up</string>
+    <string name="nameProduct">Name</string>
+    <string name="nomProductoDefault">PRODUCT</string>
+    <string name="precioProducto">Price</string>
+    <string name="DescProductoDefault">Product for sale only for this year. Ask for GMD</string>
+    <string name="nomtitDescProdudct">Product description:</string>
+    <string name="descCamposInvalidos">Invalid fields...</string>
+    <string name="alertIngresarNombre">You must enter a name</string>
+    <string name="alertIngresarContrasenia">You must enter a password</string>
+    <string name="seleccionarCantidad">Quantity</string>
+    <string name="comprar">To buy</string>
+    <string name="msgIngresoUsuarioExitoso">Successful user login</string>
+    <string name="msgIngresoUsuarioErrone">Incorrect Data Entry</string>
+    <string name="msgUsuarioInvalido">Invalid user</string>
+    <string name="msgPasswordInvalido">Invalid Password</string>
+    <string name="msgNombreInvalido">Invalid name</string>
+    <string name="msgEmailInvalido">Invalid Email</string>
+    <string name="msgEmailFormatoInvalido">Email is not in the correct format</string>
+</resources>

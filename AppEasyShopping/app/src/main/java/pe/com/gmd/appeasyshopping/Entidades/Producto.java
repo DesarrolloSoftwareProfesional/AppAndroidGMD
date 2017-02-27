@@ -6,17 +6,26 @@ package pe.com.gmd.appeasyshopping.Entidades;
 
 public class Producto {
 
+    private String codigo;
     private String nombre;
-
     private String precio;
     private int drawableImageID;
     private String cantidad;
 
-    public Producto(String nombre, String precio, String cantidad,  int drawableImageID) {
+    public Producto(String codigo, String nombre, String precio, String cantidad, int drawableImageID) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
         this.drawableImageID = drawableImageID;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public String getCantidad() {
@@ -42,7 +51,6 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
 
     public int getDrawableImageID() {
         return drawableImageID;
