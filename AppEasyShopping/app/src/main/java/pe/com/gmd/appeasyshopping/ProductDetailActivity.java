@@ -15,6 +15,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private TextView tvNombre;
     private TextView tvPrecio;
+    private TextView tvDescription;
     private ImageView ivImagen;
 
     @Override
@@ -25,13 +26,17 @@ public class ProductDetailActivity extends AppCompatActivity {
         obtenerControles();
       //  cargarCantidades();
         cargarDatosProducto();
+
+        establecerEventos();
     }
+
 
     private void obtenerControles()
     {
         tvNombre = (TextView) findViewById(R.id.tvNombreProducto);
         tvPrecio = (TextView) findViewById(R.id.tvPrecioProducto);
         ivImagen = (ImageView) findViewById(R.id.ivImgProducto);
+        tvDescription = (TextView) findViewById(R.id.tvDescription);
     }
 
     private void cargarDatosProducto() {
@@ -75,6 +80,23 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         }
     }
+
+    private void establecerEventos() {
+
+        tvDescription.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                goToDescription();
+            }
+        });
+    }
+
+    private void goToDescription() {
+        Intent descriptionActivity = new Intent(this, ProductDescriptionActivity.class);
+        startActivity(descriptionActivity);
+    }
+
 
     private void cargarCantidades(){
 
