@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     private static String mySharedPreferences = "myUsuario";
     private static String mykeyUsuarioSharedPerefences = "Usuario";
     private static String mykeyEstadoSharedPerefences = "EstadoShared";
-
+    //Método Oncreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
