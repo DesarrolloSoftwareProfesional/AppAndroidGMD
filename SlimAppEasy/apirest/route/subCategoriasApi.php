@@ -5,8 +5,14 @@ $app->get("/subCategoriasApi/",function() use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare("SELECT SuCat_Identificador, Cate_Identificador, SuCat_Denominacion, SuCat_Descripcion, SuCat_EstadoRegistro FROM tbl_subcategorias WHERE 1");
-
+        $dbh = $connection->prepare("
+				SELECT 
+					SuCat_Identificador, 
+					Cate_Identificador, 
+					SuCat_Denominacion, 
+					SuCat_Descripcion, 
+					SuCat_EstadoRegistro 
+				FROM tbl_subcategorias WHERE 1");
         $dbh->execute();
         $tbl_subcategorias = $dbh->fetchAll(PDO::FETCH_ASSOC);;
         $connection=null;
@@ -23,7 +29,15 @@ $app->get("/subCategoriasApi/:id",function($id) use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare(" SELECT SuCat_Identificador, Cate_Identificador, SuCat_Denominacion, SuCat_Descripcion, SuCat_EstadoRegistro FROM tbl_subcategorias WHERE SuCat_Identificador=? ");
+        $dbh = $connection->prepare(" 
+							SELECT 
+								SuCat_Identificador, 
+								Cate_Identificador, 
+								SuCat_Denominacion, 
+								SuCat_Descripcion, 
+								SuCat_EstadoRegistro 
+							FROM tbl_subcategorias 
+							WHERE SuCat_Identificador=? ");
         $dbh->bindParam(1,$id);
         $dbh->execute();
         $book = $dbh->fetchObject();
@@ -52,11 +66,23 @@ $app->post("/subCategoriasApi/",function() use ($app)
         $sql =""; 
         $connection = getConnection();
         if ($accion=="PUT") {
-            $sql = " UPDATE tbl_subcategorias SET Cate_Identificador=?, SuCat_Denominacion=?, SuCat_Descripcion=?, SuCat_EstadoRegistro=? WHERE SuCat_Identificador=? ";
+            $sql = " UPDATE tbl_subcategorias SET 
+						Cate_Identificador=?, 
+						SuCat_Denominacion=?, 
+						SuCat_Descripcion=?, 
+						SuCat_EstadoRegistro=? 
+					WHERE SuCat_Identificador=? ";
         }else if ($accion=="DELETE") {
             $sql = "DELETE FROM tbl_subcategorias WHERE SuCat_Identificador=? ";
         }else{
-            $sql = "INSERT INTO tbl_subcategorias ((Cate_Identificador, SuCat_Denominacion, SuCat_Descripcion, SuCat_EstadoRegistro)) VALUES(?,?,?,?)";
+            $sql = "INSERT INTO tbl_subcategorias 
+						(
+							Cate_Identificador, 
+							SuCat_Denominacion, 
+							SuCat_Descripcion, 
+							SuCat_EstadoRegistro
+						) 
+							VALUES(?,?,?,?)";
         }
         
         $dbh = $connection->prepare($sql);
@@ -75,13 +101,13 @@ $app->post("/subCategoriasApi/",function() use ($app)
 			$dbh->bindParam(4,$SuCat_EstadoRegistro);			
         }	
         $dbh->execute();
-        $locationId = $connection->lastInsertId();
+        $SuCat_Identificador = $connection->lastInsertId();
         
         $connection=null;
 
         $app->response->headers->set("Content-type","application/json");
         $app->response->status(200);
-        $app->response->body(json_encode($locationId));
+        $app->response->body(json_encode($SuCat_Identificador));
     } catch (PDOException $e) {
         echo "Error:2 " . $e->getMessage();
     }
@@ -100,7 +126,13 @@ $app->put("/subCategoriasApi/",function() use ($app)
     try {
 
         $connection = getConnection();
-        $dbh = $connection->prepare(" UPDATE tbl_subcategorias SET Cate_Identificador=?, SuCat_Denominacion=?, SuCat_Descripcion=?, SuCat_EstadoRegistro=? WHERE SuCat_Identificador=? ");
+        $dbh = $connection->prepare(" 
+							UPDATE tbl_subcategorias 
+								SET Cate_Identificador=?, 
+								SuCat_Denominacion=?, 
+								SuCat_Descripcion=?, 
+								SuCat_EstadoRegistro=? 
+							WHERE SuCat_Identificador=? ");
         $dbh->bindParam(1,$Cate_Identificador);
         $dbh->bindParam(2,$SuCat_Denominacion);
         $dbh->bindParam(3,$SuCat_Descripcion);
@@ -118,7 +150,7 @@ $app->put("/subCategoriasApi/",function() use ($app)
     }
 });
 
-$app->delete("/subCategoriasApi/:id",function($id) use ($app)
+$app->delete("/subCategoriasApi/", function() use ($app)
 {
     $request = $app->request();
     $subCategoriasApi = json_decode($request->getBody());
