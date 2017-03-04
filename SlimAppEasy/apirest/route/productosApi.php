@@ -5,9 +5,18 @@ $app->get("/productosApi/",function() use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare("SELECT Prod_Identificador, SuCat_Identificador, Prod_Cantidad, Prod_Denominacion, Prod_Descripcion, Prod_Precio, Prod_EstadoRegistro FROM tbl_productos WHERE 1");
-
-
+        $dbh = $connection->prepare
+				("
+					SELECT 
+						Prod_Identificador, 
+						SuCat_Identificador, 
+						Prod_Cantidad, 
+						Prod_Denominacion, 
+						Prod_Descripcion, 
+						Prod_Precio, 
+						Prod_EstadoRegistro 
+					FROM tbl_productos WHERE 1
+				");
         $dbh->execute();
         $tbl_usuarios = $dbh->fetchAll(PDO::FETCH_ASSOC);;
         $connection=null;
@@ -24,7 +33,19 @@ $app->get("/productosApi/:id",function($id) use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare(" SELECT Prod_Identificador, SuCat_Identificador, Prod_Cantidad, Prod_Denominacion, Prod_Descripcion, Prod_Precio, Prod_EstadoRegistro FROM tbl_productos WHERE Prod_Identificador=? ");
+        $dbh = $connection->prepare
+				(" 
+					SELECT 
+						Prod_Identificador, 
+						SuCat_Identificador, 
+						Prod_Cantidad, 
+						Prod_Denominacion, 
+						Prod_Descripcion, 
+						Prod_Precio, 
+						Prod_EstadoRegistro 
+					FROM tbl_productos 
+					WHERE Prod_Identificador=? 
+				");
         $dbh->bindParam(1,$id);
         $dbh->execute();
         $book = $dbh->fetchObject();
@@ -55,11 +76,26 @@ $app->post("/productosApi/",function() use ($app)
         $sql =""; 
         $connection = getConnection();
         if ($accion=="PUT") {
-            $sql = " UPDATE tbl_productos SET SuCat_Identificador=?, Prod_Cantidad=?, Prod_Denominacion=?, Prod_Descripcion=?, Prod_Precio=?, Prod_EstadoRegistro=? WHERE Prod_Identificador=? ";
+            $sql = "	UPDATE tbl_productos SET 
+							SuCat_Identificador=?, 
+							Prod_Cantidad=?, 
+							Prod_Denominacion=?, 
+							Prod_Descripcion=?, 
+							Prod_Precio=?, 
+							Prod_EstadoRegistro=? 
+						WHERE Prod_Identificador=? ";
         }else if ($accion=="DELETE") {
             $sql = "DELETE FROM tbl_productos WHERE Prod_Identificador=? ";
         }else{
-            $sql = "INSERT INTO tbl_productos ((SuCat_Identificador, Prod_Cantidad, Prod_Denominacion, Prod_Descripcion, Prod_Precio, Prod_EstadoRegistro)) VALUES(?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_productos 
+					(
+						SuCat_Identificador, 
+						Prod_Cantidad, 
+						Prod_Denominacion, 
+						Prod_Descripcion, 
+						Prod_Precio, 
+						Prod_EstadoRegistro
+					) VALUES(?,?,?,?,?,?)";
         }
         
         $dbh = $connection->prepare($sql);
@@ -82,13 +118,13 @@ $app->post("/productosApi/",function() use ($app)
 			$dbh->bindParam(6,$Prod_EstadoRegistro);			
         }	
         $dbh->execute();
-        $locationId = $connection->lastInsertId();
+        $Usu_Identificador = $connection->lastInsertId();
         
         $connection=null;
 
         $app->response->headers->set("Content-type","application/json");
         $app->response->status(200);
-        $app->response->body(json_encode($locationId));
+        $app->response->body(json_encode($Usu_Identificador));
     } catch (PDOException $e) {
         echo "Error:2 " . $e->getMessage();
     }
@@ -109,7 +145,17 @@ $app->put("/productosApi/",function() use ($app)
     try {
 
         $connection = getConnection();
-        $dbh = $connection->prepare(" UPDATE tbl_productos SET SuCat_Identificador=?, Prod_Cantidad=?, Prod_Denominacion=?, Prod_Descripcion=?, Prod_Precio=?, Prod_EstadoRegistro=? WHERE Prod_Identificador=? ");
+        $dbh = $connection->prepare
+			(" 
+				UPDATE 	tbl_productos SET 
+						SuCat_Identificador=?, 
+						Prod_Cantidad=?, 
+						Prod_Denominacion=?, 
+						Prod_Descripcion=?, 
+						Prod_Precio=?, 
+						Prod_EstadoRegistro=? 
+				WHERE Prod_Identificador=? 
+			");
         $dbh->bindParam(1,$SuCat_Identificador);
         $dbh->bindParam(2,$Prod_Cantidad);
         $dbh->bindParam(3,$Prod_Denominacion);
@@ -129,7 +175,7 @@ $app->put("/productosApi/",function() use ($app)
     }
 });
 
-$app->delete("/productosApi/:id",function($id) use ($app)
+$app->delete("/productosApi/", function() use ($app)
 {
     $request = $app->request();
     $productosApi = json_decode($request->getBody());
