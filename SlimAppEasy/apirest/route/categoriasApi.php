@@ -5,8 +5,14 @@ $app->get("/categoriasApi/",function() use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare("SELECT Cate_Identificador, Cate_Denominacion, Cate_Descripcion, Cate_EstadoRegistro FROM tbl_categorias WHERE 1");
-
+        $dbh = $connection->prepare
+			("	SELECT 
+					Cate_Identificador, 
+					Cate_Denominacion, 
+					Cate_Descripcion, 
+					Cate_EstadoRegistro 
+				FROM tbl_categorias WHERE 1"
+			);
 
         $dbh->execute();
         $tbl_usuarios = $dbh->fetchAll(PDO::FETCH_ASSOC);;
@@ -24,7 +30,16 @@ $app->get("/categoriasApi/:id",function($id) use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare(" SELECT Cate_Identificador, Cate_Denominacion, Cate_Descripcion, Cate_EstadoRegistro FROM tbl_categorias WHERE Cate_Identificador=? ");
+        $dbh = $connection->prepare
+			(" 
+			SELECT 
+				Cate_Identificador, 
+				Cate_Denominacion, 
+				Cate_Descripcion, 
+				Cate_EstadoRegistro 
+				FROM tbl_categorias 
+			WHERE Cate_Identificador=? "
+			);
         $dbh->bindParam(1,$id);
         $dbh->execute();
         $book = $dbh->fetchObject();
@@ -52,11 +67,19 @@ $app->post("/categoriasApi/",function() use ($app)
         $sql =""; 
         $connection = getConnection();
         if ($accion=="PUT") {
-            $sql = " UPDATE tbl_categorias SET Cate_Denominacion=?, Cate_Descripcion=?, Cate_EstadoRegistro=? WHERE Cate_Identificador=? ";
+            $sql = " UPDATE tbl_categorias SET 
+						Cate_Denominacion=?, 
+						Cate_Descripcion=?, 
+						Cate_EstadoRegistro=? 
+					 WHERE Cate_Identificador=? ";
         }else if ($accion=="DELETE") {
             $sql = "DELETE FROM tbl_categorias WHERE Cate_Identificador=? ";
         }else{
-            $sql = "INSERT INTO tbl_categorias ((Cate_Denominacion, Cate_Descripcion, Cate_EstadoRegistro)) VALUES(?,?,?)";
+            $sql = "INSERT INTO tbl_categorias 
+					( 	Cate_Denominacion, 
+						Cate_Descripcion,
+						Cate_EstadoRegistro
+					) VALUES(?,?,?)";
         }
         
         $dbh = $connection->prepare($sql);
@@ -73,13 +96,13 @@ $app->post("/categoriasApi/",function() use ($app)
 			$dbh->bindParam(3,$Cate_EstadoRegistro);	
         }	
         $dbh->execute();
-        $locationId = $connection->lastInsertId();
+        $Cate_Identificador = $connection->lastInsertId();
         
         $connection=null;
 
         $app->response->headers->set("Content-type","application/json");
         $app->response->status(200);
-        $app->response->body(json_encode($locationId));
+        $app->response->body(json_encode($Cate_Identificador));
     } catch (PDOException $e) {
         echo "Error:2 " . $e->getMessage();
     }
@@ -97,7 +120,14 @@ $app->put("/categoriasApi/",function() use ($app)
     try {
 
         $connection = getConnection();
-        $dbh = $connection->prepare(" UPDATE tbl_categorias SET Cate_Denominacion=?, Cate_Descripcion=?, Cate_EstadoRegistro=? WHERE Cate_Identificador=? ");
+        $dbh = $connection->prepare
+				(" 
+					UPDATE tbl_categorias SET
+						Cate_Denominacion=?, 
+						Cate_Descripcion=?, 
+						Cate_EstadoRegistro=? 
+					WHERE Cate_Identificador=? 
+				");				
         $dbh->bindParam(1,$Cate_Denominacion);
         $dbh->bindParam(2,$Cate_Descripcion);
         $dbh->bindParam(3,$Cate_EstadoRegistro);
@@ -114,7 +144,7 @@ $app->put("/categoriasApi/",function() use ($app)
     }
 });
 
-$app->delete("/categoriasApi/:id",function($id) use ($app)
+$app->delete("/categoriasApi/", function() use ($app)
 {
     $request = $app->request();
     $categoriasApi = json_decode($request->getBody());
