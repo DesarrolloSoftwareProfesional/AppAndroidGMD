@@ -5,9 +5,17 @@ $app->get("/usuariosApi/",function() use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare("SELECT Usu_Identificador, Usu_Usuario, Usu_Contrasena, Usu_ApePaterno, Usu_ApeMaterno, Usu_Nombres, Usu_CorreoElectronico, Usu_EstadoRegistro FROM tbl_usuarios WHERE 1");
-
-
+        $dbh = $connection->prepare(
+		"SELECT Usu_Identificador
+				,Usu_Usuario
+				,Usu_Contrasena
+				,Usu_ApePaterno
+				,Usu_ApeMaterno
+				,Usu_Nombres
+				,Usu_CorreoElectronico
+				,Usu_EstadoRegistro
+		FROM tbl_usuarios WHERE 1");
+		
         $dbh->execute();
         $tbl_usuarios = $dbh->fetchAll(PDO::FETCH_ASSOC);;
         $connection=null;
@@ -24,7 +32,16 @@ $app->get("/usuariosApi/:id",function($id) use ($app)
 {
     try {
         $connection = getConnection();
-        $dbh = $connection->prepare(" SELECT Usu_Identificador, Usu_Usuario, Usu_Contrasena, Usu_ApePaterno, Usu_ApeMaterno, Usu_Nombres, Usu_CorreoElectronico, Usu_EstadoRegistro FROM tbl_usuarios WHERE Usu_Identificador=? ");
+        $dbh = $connection->prepare(" 
+		SELECT Usu_Identificador
+			,Usu_Usuario
+			,Usu_Contrasena
+			,Usu_ApePaterno
+			,Usu_ApeMaterno
+			,Usu_Nombres
+			,Usu_CorreoElectronico
+			,Usu_EstadoRegistro
+		FROM tbl_usuarios WHERE Usu_Identificador=? ");
         $dbh->bindParam(1,$id);
         $dbh->execute();
         $book = $dbh->fetchObject();
@@ -56,11 +73,28 @@ $app->post("/usuariosApi/",function() use ($app)
         $sql =""; 
         $connection = getConnection();
         if ($accion=="PUT") {
-            $sql = " UPDATE tbl_usuarios SET Usu_Usuario=?, Usu_Contrasena=?, Usu_ApePaterno=?, Usu_ApeMaterno=?, Usu_Nombres=?, Usu_CorreoElectronico=?, Usu_EstadoRegistro=? WHERE Usu_Identificador=? ";
+            $sql = " UPDATE tbl_usuarios SET 
+						Usu_Usuario=?,
+						Usu_Contrasena=?,
+						Usu_ApePaterno=?,
+						Usu_ApeMaterno=?,
+						Usu_Nombres=?,
+						Usu_CorreoElectronico=?,
+						Usu_EstadoRegistro=?
+					WHERE Usu_Identificador=? ";
         }else if ($accion=="DELETE") {
             $sql = "DELETE FROM tbl_usuarios WHERE Usu_Identificador=? ";
         }else{
-            $sql = "INSERT INTO tbl_usuarios ((Usu_Usuario, Usu_Contrasena, Usu_ApePaterno, Usu_ApeMaterno, Usu_Nombres, Usu_CorreoElectronico, Usu_EstadoRegistro)) VALUES(?,?,?,?,?,?,?)";
+            $sql = "INSERT INTO tbl_usuarios 
+					(	Usu_Usuario
+						,Usu_Contrasena
+						,Usu_ApePaterno
+						,Usu_ApeMaterno
+						,Usu_Nombres
+						,Usu_CorreoElectronico
+						,Usu_EstadoRegistro
+					 )
+					 VALUES(?,?,?,?,?,?,?)";
         }
         
         $dbh = $connection->prepare($sql);
@@ -85,13 +119,13 @@ $app->post("/usuariosApi/",function() use ($app)
 			$dbh->bindParam(7,$Usu_EstadoRegistro);
         }	
         $dbh->execute();
-        $locationId = $connection->lastInsertId();
+        $Usu_Identificador = $connection->lastInsertId();
         
         $connection=null;
 
         $app->response->headers->set("Content-type","application/json");
         $app->response->status(200);
-        $app->response->body(json_encode($locationId));
+        $app->response->body(json_encode($Usu_Identificador));
     } catch (PDOException $e) {
         echo "Error:2 " . $e->getMessage();
     }
@@ -113,7 +147,17 @@ $app->put("/usuariosApi/",function() use ($app)
     try {
 
         $connection = getConnection();
-        $dbh = $connection->prepare(" UPDATE tbl_usuarios SET Usu_Usuario=?, Usu_Contrasena=?, Usu_ApePaterno=?, Usu_ApeMaterno=?, Usu_Nombres=?, Usu_CorreoElectronico=?, Usu_EstadoRegistro=? WHERE Usu_Identificador=? ");
+        $dbh = $connection->prepare
+				(" UPDATE tbl_usuarios SET 
+						Usu_Usuario=?
+						,Usu_Contrasena=?
+						,Usu_ApePaterno=?
+						,Usu_ApeMaterno=?
+						,Usu_Nombres=?
+						,Usu_CorreoElectronico=?
+						,Usu_EstadoRegistro=?
+				   WHERE Usu_Identificador=? 
+				");
         $dbh->bindParam(1,$Usu_Usuario);
         $dbh->bindParam(2,$Usu_Contrasena);
         $dbh->bindParam(3,$Usu_ApePaterno);
@@ -134,7 +178,7 @@ $app->put("/usuariosApi/",function() use ($app)
     }
 });
 
-$app->delete("/usuariosApi/:id",function($id) use ($app)
+$app->delete("/usuariosApi/", function() use ($app)
 {
     $request = $app->request();
     $usuariosApi = json_decode($request->getBody());
@@ -153,4 +197,3 @@ $app->delete("/usuariosApi/:id",function($id) use ($app)
         echo "Error: " . $e->getMessage();
     }
 });
-?>
