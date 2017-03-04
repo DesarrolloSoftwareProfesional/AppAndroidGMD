@@ -39,6 +39,7 @@
                 android:textColorHint="@color/white100"
                 android:layout_marginBottom="10dp"
                 android:hint="Username"
+                android:inputType="text"
                 android:imeOptions="actionNext"
                 android:id="@+id/textName"/>
 
