@@ -19,7 +19,7 @@ POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
   "Usu_FechaCreacion": "2017-03-05 00:00:00"
 }
 
-PUT https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+PUT : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
 
 {
   "Usu_Identificador": "1",
