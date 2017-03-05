@@ -1,3 +1,5 @@
+-- SEGURIDAD --
+
 GET : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
 
 GET : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi/1
@@ -49,3 +51,11 @@ POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/login
   "Usu_Usuario": "ddurand",
   "Usu_Contrasena": "123456"
 }
+
+-- MANTENIMIENTOS - CRUD --
+
+https://www.ginperu.com/SlimAppEasy/apirest/index.php/categoriasApi
+
+https://www.ginperu.com/SlimAppEasy/apirest/index.php/subCategoriasApi
+
+https://www.ginperu.com/SlimAppEasy/apirest/index.php/productosApi
