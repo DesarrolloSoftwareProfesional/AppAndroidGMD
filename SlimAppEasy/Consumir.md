@@ -7,7 +7,7 @@ POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
 {
   "Usu_Usuario": "ddurand",
   "Usu_Contrasena": "123456",
-  "Usu_ClaveApi": "123456",
+  "Usu_ClaveApi": "e10adc3949ba59abbe56e057f20f883e",
   "Usu_ApePaterno": "Durand",
   "Usu_ApeMaterno": "Morillo",
   "Usu_Nombres": "Darwin",
