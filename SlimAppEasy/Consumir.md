@@ -43,7 +43,7 @@ DELETE : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
   "Usu_Identificador": "2"
 }
 
-POST : http://localhost:85/SlimAppEasy/apirest/index.php/login
+POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/login
 
 {
   "Usu_Usuario": "ddurand",
