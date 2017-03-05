@@ -1,5 +1,5 @@
 <?php
- if (!defined("SPECIALCONSTANT")) die("Accedo Denegado");
+ if (!defined("SPECIALCONSTANT")) die("Acceso Denegado");
 
 $app->get("/productosApi/",function() use ($app)
 {
@@ -9,12 +9,17 @@ $app->get("/productosApi/",function() use ($app)
 				("
 					SELECT 
 						Prod_Identificador, 
-						SuCat_Identificador, 
-						Prod_Cantidad, 
-						Prod_Denominacion, 
-						Prod_Descripcion, 
-						Prod_Precio, 
-						Prod_EstadoRegistro 
+						SuCat_Identificador,						
+						Prod_Denominacion,
+						Prod_Descripcion,
+						Prod_Cantidad,
+						Prod_Precio,
+						Prod_UImagen,
+						Prod_EstadoRegistro,
+						Prod_UsuarioCreacion,
+						Prod_FechaCreacion,
+						Prod_UsuarioActualizacion,
+						Prod_FechaActualizacion
 					FROM tbl_productos WHERE 1
 				");
         $dbh->execute();
@@ -37,12 +42,17 @@ $app->get("/productosApi/:id",function($id) use ($app)
 				(" 
 					SELECT 
 						Prod_Identificador, 
-						SuCat_Identificador, 
-						Prod_Cantidad, 
-						Prod_Denominacion, 
-						Prod_Descripcion, 
-						Prod_Precio, 
-						Prod_EstadoRegistro 
+						SuCat_Identificador,						
+						Prod_Denominacion,
+						Prod_Descripcion,
+						Prod_Cantidad,
+						Prod_Precio,
+						Prod_UImagen,
+						Prod_EstadoRegistro,
+						Prod_UsuarioCreacion,
+						Prod_FechaCreacion,
+						Prod_UsuarioActualizacion,
+						Prod_FechaActualizacion
 					FROM tbl_productos 
 					WHERE Prod_Identificador=? 
 				");
@@ -64,59 +74,43 @@ $app->post("/productosApi/",function() use ($app)
     $request = $app->request();
     $productosApi = json_decode($request->getBody());
 
-	$Prod_Identificador = $productosApi->Prod_Identificador;
     $SuCat_Identificador = $productosApi->SuCat_Identificador;
-    $Prod_Cantidad = $productosApi->Prod_Cantidad;
     $Prod_Denominacion = $productosApi->Prod_Denominacion;
     $Prod_Descripcion = $productosApi->Prod_Descripcion;
+    $Prod_Cantidad = $productosApi->Prod_Cantidad;
 	$Prod_Precio = $productosApi->Prod_Precio;	
-	$Prod_EstadoRegistro = $productosApi->Prod_EstadoRegistro;	
-    $accion = $productosApi->accion;
+	$Prod_UImagen = $productosApi->Prod_UImagen;	
+    $Prod_EstadoRegistro = $productosApi->Prod_EstadoRegistro;
+	$Prod_UsuarioCreacion = $productosApi->Prod_UsuarioCreacion;
+	$Prod_FechaCreacion = $productosApi->Prod_FechaCreacion;
     try {
         $sql =""; 
         $connection = getConnection();
-        if ($accion=="PUT") {
-            $sql = "	UPDATE tbl_productos SET 
-							SuCat_Identificador=?, 
-							Prod_Cantidad=?, 
-							Prod_Denominacion=?, 
-							Prod_Descripcion=?, 
-							Prod_Precio=?, 
-							Prod_EstadoRegistro=? 
-						WHERE Prod_Identificador=? ";
-        }else if ($accion=="DELETE") {
-            $sql = "DELETE FROM tbl_productos WHERE Prod_Identificador=? ";
-        }else{
-            $sql = "INSERT INTO tbl_productos 
-					(
-						SuCat_Identificador, 
-						Prod_Cantidad, 
-						Prod_Denominacion, 
-						Prod_Descripcion, 
-						Prod_Precio, 
-						Prod_EstadoRegistro
-					) VALUES(?,?,?,?,?,?)";
-        }
-        
+       
+        $sql = "INSERT INTO tbl_productos 
+			(
+				SuCat_Identificador, 
+				Prod_Denominacion, 
+				Prod_Descripcion, 
+				Prod_Cantidad, 
+				Prod_Precio, 
+				Prod_UImagen,
+				Prod_EstadoRegistro,
+				Prod_UsuarioCreacion,
+				Prod_FechaCreacion				
+			) VALUES(?,?,?,?,?,?,?,?,?)";
+                
         $dbh = $connection->prepare($sql);
-        if ($accion=="DELETE") {
-            $dbh->bindParam(1,$Usu_Identificador);           
-        }else if ($accion=="PUT") {
-            $dbh->bindParam(1,$SuCat_Identificador);
-			$dbh->bindParam(2,$Prod_Cantidad);
-			$dbh->bindParam(3,$Prod_Denominacion);
-			$dbh->bindParam(4,$Prod_Descripcion);
-			$dbh->bindParam(5,$Prod_Precio);
-			$dbh->bindParam(6,$Prod_EstadoRegistro);
-			$dbh->bindParam(7,$Prod_Identificador);
-        }else {
-            $dbh->bindParam(1,$SuCat_Identificador);
-			$dbh->bindParam(2,$Prod_Cantidad);
-			$dbh->bindParam(3,$Prod_Denominacion);
-			$dbh->bindParam(4,$Prod_Descripcion);
-			$dbh->bindParam(5,$Prod_Precio);
-			$dbh->bindParam(6,$Prod_EstadoRegistro);			
-        }	
+        
+        $dbh->bindParam(1,$SuCat_Identificador);
+		$dbh->bindParam(2,$Prod_Denominacion);
+		$dbh->bindParam(3,$Prod_Descripcion);
+		$dbh->bindParam(4,$Prod_Cantidad);
+		$dbh->bindParam(5,$Prod_Precio);
+		$dbh->bindParam(6,$Prod_UImagen);
+		$dbh->bindParam(7,$Prod_EstadoRegistro);			
+        $dbh->bindParam(8,$Prod_UsuarioCreacion);
+		$dbh->bindParam(9,$Prod_FechaCreacion);
         $dbh->execute();
         $Usu_Identificador = $connection->lastInsertId();
         
@@ -135,13 +129,17 @@ $app->put("/productosApi/",function() use ($app)
     $request = $app->request();
     $productosApi = json_decode($request->getBody());
 
+	$Prod_Identificador = $productosApi->Prod_Identificador;
     $SuCat_Identificador = $productosApi->SuCat_Identificador;
-    $Prod_Cantidad = $productosApi->Prod_Cantidad;
     $Prod_Denominacion = $productosApi->Prod_Denominacion;
     $Prod_Descripcion = $productosApi->Prod_Descripcion;
+    $Prod_Cantidad = $productosApi->Prod_Cantidad;
 	$Prod_Precio = $productosApi->Prod_Precio;
+	$Prod_UImagen = $productosApi->Prod_UImagen;
 	$Prod_EstadoRegistro = $productosApi->Prod_EstadoRegistro;
-	$Prod_Identificador = $productosApi->Prod_Identificador;   
+	$Prod_UsuarioActualizacion = $productosApi->Prod_UsuarioActualizacion;
+	$Prod_FechaActualizacion = $productosApi->Prod_FechaActualizacion;
+	   
     try {
 
         $connection = getConnection();
@@ -149,20 +147,26 @@ $app->put("/productosApi/",function() use ($app)
 			(" 
 				UPDATE 	tbl_productos SET 
 						SuCat_Identificador=?, 
-						Prod_Cantidad=?, 
 						Prod_Denominacion=?, 
 						Prod_Descripcion=?, 
-						Prod_Precio=?, 
-						Prod_EstadoRegistro=? 
+						Prod_Cantidad=?, 
+						Prod_Precio=?,
+						Prod_UImagen=?, 
+						Prod_EstadoRegistro=?,
+						Prod_UsuarioActualizacion=?,
+						Prod_FechaActualizacion=? 
 				WHERE Prod_Identificador=? 
 			");
         $dbh->bindParam(1,$SuCat_Identificador);
-        $dbh->bindParam(2,$Prod_Cantidad);
-        $dbh->bindParam(3,$Prod_Denominacion);
-        $dbh->bindParam(4,$Prod_Descripcion);
+        $dbh->bindParam(2,$Prod_Denominacion);
+        $dbh->bindParam(3,$Prod_Descripcion);
+        $dbh->bindParam(4,$Prod_Cantidad);
 		$dbh->bindParam(5,$Prod_Precio);
-		$dbh->bindParam(6,$Prod_EstadoRegistro);
-		$dbh->bindParam(7,$Prod_Identificador);
+		$dbh->bindParam(6,$Prod_UImagen);
+		$dbh->bindParam(7,$Prod_EstadoRegistro);
+		$dbh->bindParam(8,$Prod_UsuarioActualizacion);
+		$dbh->bindParam(9,$Prod_FechaActualizacion);
+		$dbh->bindParam(10,$Prod_Identificador);
         $dbh->execute();
         
         $connection=null;

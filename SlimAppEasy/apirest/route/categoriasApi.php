@@ -1,5 +1,5 @@
 <?php
- if (!defined("SPECIALCONSTANT")) die("Accedo Denegado");
+ if (!defined("SPECIALCONSTANT")) die("Acceso Denegado");
 
 $app->get("/categoriasApi/",function() use ($app)
 {
@@ -10,7 +10,12 @@ $app->get("/categoriasApi/",function() use ($app)
 					Cate_Identificador, 
 					Cate_Denominacion, 
 					Cate_Descripcion, 
-					Cate_EstadoRegistro 
+					Cate_UImagen,
+					Cate_EstadoRegistro,
+					Cate_UsuarioCreacion,
+					Cate_FechaCreacion,
+					Cate_UsuarioActualizacion,
+					Cate_FechaActualizacion					
 				FROM tbl_categorias WHERE 1"
 			);
 
@@ -36,8 +41,12 @@ $app->get("/categoriasApi/:id",function($id) use ($app)
 				Cate_Identificador, 
 				Cate_Denominacion, 
 				Cate_Descripcion, 
-				Cate_EstadoRegistro 
-				FROM tbl_categorias 
+				Cate_UImagen,
+				Cate_EstadoRegistro,
+				Cate_UsuarioCreacion,
+				Cate_FechaCreacion,
+				Cate_UsuarioActualizacion,
+				Cate_FechaActualizacion	
 			WHERE Cate_Identificador=? "
 			);
         $dbh->bindParam(1,$id);
@@ -57,44 +66,34 @@ $app->post("/categoriasApi/",function() use ($app)
 {
     $request = $app->request();
     $categoriasApi = json_decode($request->getBody());
-
-	$Cate_Identificador = $categoriasApi->Cate_Identificador;
+	
     $Cate_Denominacion = $categoriasApi->Cate_Denominacion;
     $Cate_Descripcion = $categoriasApi->Cate_Descripcion;
+	$Cate_UImagen = $categoriasApi->Cate_UImagen;
     $Cate_EstadoRegistro = $categoriasApi->Cate_EstadoRegistro;    
-    $accion = $categoriasApi->accion;
+	$Cate_UsuarioCreacion = $categoriasApi->Cate_UsuarioCreacion;
+	$Cate_FechaCreacion = $categoriasApi->Cate_FechaCreacion;
     try {
         $sql =""; 
-        $connection = getConnection();
-        if ($accion=="PUT") {
-            $sql = " UPDATE tbl_categorias SET 
-						Cate_Denominacion=?, 
-						Cate_Descripcion=?, 
-						Cate_EstadoRegistro=? 
-					 WHERE Cate_Identificador=? ";
-        }else if ($accion=="DELETE") {
-            $sql = "DELETE FROM tbl_categorias WHERE Cate_Identificador=? ";
-        }else{
-            $sql = "INSERT INTO tbl_categorias 
-					( 	Cate_Denominacion, 
-						Cate_Descripcion,
-						Cate_EstadoRegistro
-					) VALUES(?,?,?)";
-        }
-        
+        $connection = getConnection();        
+        $sql = "INSERT INTO tbl_categorias 
+			( 	Cate_Denominacion, 
+				Cate_Descripcion,
+				Cate_UImagen,
+				Cate_EstadoRegistro,
+				Cate_UsuarioCreacion,
+				Cate_FechaCreacion						
+			) VALUES(?,?,?,?,?,?)";
+                
         $dbh = $connection->prepare($sql);
-        if ($accion=="DELETE") {
-            $dbh->bindParam(1,$Cate_Identificador);           
-        }else if ($accion=="PUT") {
-            $dbh->bindParam(1,$Cate_Denominacion);
-			$dbh->bindParam(2,$Cate_Descripcion);
-			$dbh->bindParam(3,$Cate_EstadoRegistro);
-			$dbh->bindParam(4,$Cate_Identificador);
-        }else {
-            $dbh->bindParam(1,$Cate_Denominacion);
-			$dbh->bindParam(2,$Cate_Descripcion);
-			$dbh->bindParam(3,$Cate_EstadoRegistro);	
-        }	
+        
+        $dbh->bindParam(1,$Cate_Denominacion);
+		$dbh->bindParam(2,$Cate_Descripcion);
+		$dbh->bindParam(3,$Cate_UImagen);
+		$dbh->bindParam(4,$Cate_EstadoRegistro);
+		$dbh->bindParam(5,$Cate_UsuarioCreacion);	
+		$dbh->bindParam(6,$Cate_FechaCreacion);			
+        	
         $dbh->execute();
         $Cate_Identificador = $connection->lastInsertId();
         
@@ -113,10 +112,14 @@ $app->put("/categoriasApi/",function() use ($app)
     $request = $app->request();
     $categoriasApi = json_decode($request->getBody());
 
+	$Cate_Identificador = $categoriasApi->Cate_Identificador;
     $Cate_Denominacion = $categoriasApi->Cate_Denominacion;
     $Cate_Descripcion = $categoriasApi->Cate_Descripcion;
+	$Cate_UImagen = $categoriasApi->Cate_UImagen;
     $Cate_EstadoRegistro = $categoriasApi->Cate_EstadoRegistro;
-    $Cate_Identificador = $categoriasApi->Cate_Identificador;	
+	$Cate_UsuarioActualizacion = $categoriasApi->Cate_UsuarioActualizacion;
+	$Cate_FechaActualizacion = $categoriasApi->Cate_FechaActualizacion;
+    	
     try {
 
         $connection = getConnection();
@@ -125,13 +128,19 @@ $app->put("/categoriasApi/",function() use ($app)
 					UPDATE tbl_categorias SET
 						Cate_Denominacion=?, 
 						Cate_Descripcion=?, 
-						Cate_EstadoRegistro=? 
+						Cate_UImagen=?, 
+						Cate_EstadoRegistro=?,
+						Cate_UsuarioActualizacion=?,
+						Cate_FechaActualizacion=?
 					WHERE Cate_Identificador=? 
 				");				
         $dbh->bindParam(1,$Cate_Denominacion);
         $dbh->bindParam(2,$Cate_Descripcion);
-        $dbh->bindParam(3,$Cate_EstadoRegistro);
-		$dbh->bindParam(4,$Cate_Identificador);  		
+		$dbh->bindParam(3,$Cate_UImagen);
+        $dbh->bindParam(4,$Cate_EstadoRegistro);
+		$dbh->bindParam(5,$Cate_UsuarioActualizacion);
+		$dbh->bindParam(6,$Cate_FechaActualizacion);
+		$dbh->bindParam(7,$Cate_Identificador);  		
         $dbh->execute();
         
         $connection=null;
