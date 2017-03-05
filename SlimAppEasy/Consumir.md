@@ -1,6 +1,9 @@
 GET : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+
 GET : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi/1
+
 POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+
 {
   "Usu_Usuario": "ddurand",
   "Usu_Contrasena": "123456",
@@ -15,7 +18,9 @@ POST : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
   "Usu_UsuarioCreacion": "ddurand",
   "Usu_FechaCreacion": "2017-03-05 00:00:00"
 }
+
 PUT https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+
 {
   "Usu_Identificador": "1",
   "Usu_Usuario": "ddurand",
@@ -31,11 +36,15 @@ PUT https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
   "Usu_UsuarioActualizacion": "ddurand",
   "Usu_FechaActualizacion": "2017-03-05 00:00:00"
 }
+
 DELETE : https://www.ginperu.com/SlimAppEasy/apirest/index.php/usuariosApi
+
 {
   "Usu_Identificador": "2"
 }
+
 POST : http://localhost:85/SlimAppEasy/apirest/index.php/login
+
 {
   "Usu_Usuario": "ddurand",
   "Usu_Contrasena": "123456"
