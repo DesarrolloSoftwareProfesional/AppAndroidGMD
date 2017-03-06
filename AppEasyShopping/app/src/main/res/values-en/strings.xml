@@ -29,4 +29,12 @@
     <string name="msgEmailInvalido">Invalid Email</string>
     <string name="msgEmailFormatoInvalido">Email is not in the correct format</string>
     <string name="contenido">CARACTERISTICAS DEL PRODUCTO: Fabricado bajo estandares de calidad, base de pino blanco, acabado de lujo, un brillo espectacular, mastil Reforzado con Alma o valrilla de calibracion alta duracion, clavijeros reforzados, cuerdas de metal o naylon (a gusto del cliente), excelente Sonido (tipo estudio).Hacemos entregas a domicilio en Lima. Envios a Provincia atraves de empresas de encomiendas. El precio no incluye  el costo de envio. Ud recibirá la Guitarra con el  set de  regalos que  le  detallamos a continuación: Guitarra Acustica Importada (Ud. elige el color), estuche de Obsequio, 2 Picks o Uñas.</string>
+    <string name="hint_username">Username</string>
+    <string name="log_hint_password">Password</string>
+    <string name="log_nom_guardar_usuario">Save User</string>
+    <string name="logoaplication">LogoAplication</string>
+    <string name="log_tvi_registrar">Don\'t have an account? Sign up</string>
+    <string name="log_btn_log_in">Log In</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
 </resources>
