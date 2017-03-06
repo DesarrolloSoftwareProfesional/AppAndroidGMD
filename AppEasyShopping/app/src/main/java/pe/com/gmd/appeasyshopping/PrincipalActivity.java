@@ -138,10 +138,10 @@ public class PrincipalActivity extends AppCompatActivity implements NavigationVi
                 intent.setClass(this, NewProductActivity.class);
                 break;
             case R.id.nav_mi_perfil:
-                intent.setClass(this, NewProductActivity.class);
+                intent.setClass(this, MiPerfilActivity.class);
                 break;
             case R.id.nav_mis_anuncios:
-                intent.setClass(this, NewProductActivity.class);
+                intent.setClass(this, PrincipalActivity.class);
                 break;
 
         }

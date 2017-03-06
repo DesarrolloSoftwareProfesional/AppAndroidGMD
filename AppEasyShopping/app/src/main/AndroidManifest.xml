@@ -26,8 +26,9 @@
         <activity android:name=".NewProduct3Activity" />
         <activity android:name=".ProductActivity" />
         <activity android:name=".ProductListActivity" />
-        <activity android:name=".ProductDetailActivity"></activity>
-        <activity android:name=".ProductDescriptionActivity"></activity>
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".ProductDescriptionActivity" />
+        <activity android:name=".MiPerfilActivity"></activity>
     </application>
 
 </manifest>

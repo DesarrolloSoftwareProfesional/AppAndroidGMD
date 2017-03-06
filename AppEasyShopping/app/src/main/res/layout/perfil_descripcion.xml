@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_principal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/AzaleaOriginal"
+    tools:context="pe.com.gmd.appeasyshopping.MiPerfilActivity"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" Hola Diana Camus!"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:padding="8dp"
+        android:layout_margin="5sp"
+        android:textColor="@color/white100" />
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/foto_perfil"
+        android:layout_gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desarrollador movil y web en plataforma java, .net y android, 10 años de experiencia y en constante actualización."
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email: dianacamusalba@gmail.com"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Empresa: GMD"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="10 anuncios publicados."
+        android:padding="10dp"
+        android:layout_gravity="center"/>
+</LinearLayout>
