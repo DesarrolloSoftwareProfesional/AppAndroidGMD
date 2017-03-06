@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
@@ -12,8 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -22,43 +19,58 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:contentDescription="@string/logoaplication"
             android:paddingBottom="29dp"
             android:src="@mipmap/sale_logo"
             />
 
-        <EditText
-            android:id="@+id/textName"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="-30dp"
-            android:background="@color/white20"
-            android:inputType="text"
-            android:hint="Username"
-            android:imeOptions="actionNext"
-            android:padding="16dp"
-            android:textColorHint="@color/white100"
-            />
+            android:textColorHint="@android:color/white"
+            >
 
-        <EditText
-            android:id="@+id/textPass"
+            <EditText
+                android:id="@+id/textName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white20"
+                android:drawableStart="@drawable/ic_person_outline_black_24dp"
+                android:hint="@string/hint_username"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="10dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:background="@color/white20"
-            android:hint="Password"
-            android:imeOptions="actionDone"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:textColorHint="@color/white100"/>
+            android:textColorHint="@android:color/white">
+
+            <EditText
+                android:id="@+id/textPass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/white20"
+                android:drawableStart="@drawable/ic_pass_black_24dp"
+                android:hint="@string/log_hint_password"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                />
+        </android.support.design.widget.TextInputLayout>
+
         <CheckBox
+            android:id="@+id/chkGuardarUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Guardar Usuario"
-            android:textColor="@color/white100"
             android:layout_gravity="center"
-            android:buttonTint="@color/white100"
-            android:id="@+id/chkGuardarUsuario"/>
+            android:buttonTint="@android:color/white"
+            android:text="@string/log_nom_guardar_usuario"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/tvButton"
@@ -68,7 +80,7 @@
             android:background="@drawable/rectangle_white"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Log In"
+            android:text="@string/log_btn_log_in"
             android:textColor="@color/white60"
             android:textSize="18sp"/>
 
@@ -78,7 +90,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="16dp"
-            android:text="Don't have an account? Sign up"
+            android:text="@string/log_tvi_registrar"
             android:textColor="@color/white60"
             />
     </LinearLayout>

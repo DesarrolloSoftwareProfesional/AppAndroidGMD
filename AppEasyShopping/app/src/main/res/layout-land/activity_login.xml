@@ -7,17 +7,20 @@
     android:layout_height="match_parent"
     android:background="@color/Azalea"
     tools:context="pe.com.gmd.appeasyshopping.LoginActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="230dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_width="match_parent"
                 android:id="@+id/imglogin"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
                 android:src="@mipmap/sale_logo"
@@ -28,53 +31,76 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_margin="10dp"
-            android:layout_alignParentStart="true">
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white20"
-                android:padding="16dp"
-                android:layout_marginTop="20dp"
-                android:textColorHint="@color/white100"
-                android:layout_marginBottom="10dp"
-                android:hint="Username"
-                android:inputType="text"
-                android:imeOptions="actionNext"
-                android:id="@+id/textName"/>
+            android:paddingTop="30dp">
 
-            <EditText
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/white20"
-                android:padding="16dp"
-                android:layout_marginBottom="10dp"
-                android:textColorHint="@color/white100"
-                android:hint="Password"
-                android:imeOptions="actionDone"
-                android:inputType="textPassword"
-                android:id="@+id/textPass"/>
+                android:textColorHint="@android:color/white"
+                >
+
+                <EditText
+                    android:id="@+id/textName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/white20"
+                    android:drawableStart="@drawable/ic_person_outline_black_24dp"
+                    android:hint="@string/hint_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@android:color/white">
+
+                <EditText
+                    android:id="@+id/textPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/white20"
+                    android:drawableStart="@drawable/ic_pass_black_24dp"
+                    android:hint="@string/log_hint_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/chkGuardarUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:buttonTint="@android:color/white"
+                android:text="@string/log_nom_guardar_usuario"
+                android:textColor="@android:color/white"/>
 
             <TextView
+                android:id="@+id/tvButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:gravity="center"
-                android:textColor="@color/white60"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/rectangle_white"
-                android:text="Log In"
-                android:textSize="18sp"
-                android:layout_marginBottom="10dp"
-                android:id="@+id/tvButton"/>
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/log_btn_log_in"
+                android:textColor="@color/white60"
+                android:textSize="18sp"/>
 
             <TextView
+                android:id="@+id/tvNew"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/log_tvi_registrar"
                 android:textColor="@color/white60"
-                android:text="Don't have an account? Sign up"
-                android:id="@+id/tvNew"
                 />
         </LinearLayout>
     </LinearLayout>

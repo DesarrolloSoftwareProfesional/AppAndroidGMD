@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/Azalea</item>
         <item name="colorPrimaryDark">@color/LightCoral</item>
-        <item name="colorAccent">@color/Azalea</item>
+        <item name="colorAccent">@color/AccentAzalea</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
     </style>
 
