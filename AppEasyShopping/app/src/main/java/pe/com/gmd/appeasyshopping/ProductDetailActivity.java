@@ -36,7 +36,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvNombre = (TextView) findViewById(R.id.tvNombreProducto);
         tvPrecio = (TextView) findViewById(R.id.tvPrecioProducto);
         ivImagen = (ImageView) findViewById(R.id.ivImgProducto);
-        tvDescription = (TextView) findViewById(R.id.tvDescription);
+       // tvDescription = (TextView) findViewById(R.id.tvDescription);
     }
 
     private void cargarDatosProducto() {
@@ -83,13 +83,13 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private void establecerEventos() {
 
-        tvDescription.setOnClickListener(new View.OnClickListener(){
+       /* tvDescription.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
                 goToDescription();
             }
-        });
+        });*/
     }
 
     private void goToDescription() {
