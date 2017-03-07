@@ -80,11 +80,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                     String codigo = txtCodigoProducto.getText().toString();
                     //Toast.makeText(v.getContext(),nombre,Toast.LENGTH_SHORT).show();
 
+                  //  Toast.makeText(v.getContext(),irDetalle.toString(),Toast.LENGTH_SHORT).show();
+
                     if (irDetalle == true) {
                         Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
                         intent.putExtra("nombreProducto", nombre);
                         intent.putExtra("precioProducto", precio);
                         intent.putExtra("codigoProducto", codigo);
+                        irDetalle = false;
                         v.getContext().startActivity(intent);
                     }
                     else {

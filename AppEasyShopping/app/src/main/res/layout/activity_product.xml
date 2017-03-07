@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/AzaleaOriginal"
-    tools:context="pe.com.gmd.appeasyshopping.ProductActivity">
+    tools:context="pe.com.gmd.appeasyshopping.ProductActivity"
+    >
 
     <TextView
         android:layout_width="match_parent"
@@ -22,6 +23,8 @@
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginLeft="15sp"
+        android:layout_marginRight="10sp"
         >
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
