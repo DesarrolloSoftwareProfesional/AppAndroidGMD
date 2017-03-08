@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -15,8 +16,9 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private TextView tvNombre;
     private TextView tvPrecio;
-    private TextView tvDescription;
+    //private TextView tvDescription;
     private ImageView ivImagen;
+    private Button btnComprar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         tvPrecio = (TextView) findViewById(R.id.tvPrecioProducto);
         ivImagen = (ImageView) findViewById(R.id.ivImgProducto);
        // tvDescription = (TextView) findViewById(R.id.tvDescription);
+        btnComprar = (Button) findViewById(R.id.btnComprar);
     }
 
     private void cargarDatosProducto() {
@@ -83,18 +86,18 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     private void establecerEventos() {
 
-       /* tvDescription.setOnClickListener(new View.OnClickListener(){
+        btnComprar.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View view) {
-                goToDescription();
+                goToComprar();
             }
-        });*/
+        });
     }
 
-    private void goToDescription() {
-        Intent descriptionActivity = new Intent(this, ProductDescriptionActivity.class);
-        startActivity(descriptionActivity);
+    private void goToComprar() {
+        Intent sellerActivity = new Intent(this, SellerContactActivity.class);
+        startActivity(sellerActivity);
     }
 
 

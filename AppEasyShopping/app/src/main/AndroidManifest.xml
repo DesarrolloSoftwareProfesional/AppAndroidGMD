@@ -29,6 +29,7 @@
         <activity android:name=".ProductDetailActivity" />
         <activity android:name=".ProductDescriptionActivity" />
         <activity android:name=".MiPerfilActivity" />
+        <activity android:name=".SellerContactActivity"></activity>
     </application>
 
 </manifest>
