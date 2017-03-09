@@ -40,16 +40,17 @@
         android:textSize="26sp"
         android:gravity="center"
         android:textColor="@color/Azalea"
-        android:layout_below="@+id/tviNombre" />
+        android:layout_below="@+id/tviNombre"
+        />
 
 
-    <!-- veladura-->
-    <FrameLayout
+
+    <include layout="@layout/dialog_seller"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-       >
-
-    </FrameLayout>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
 
 
 
